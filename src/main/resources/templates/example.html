@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampUs</title>
+
+
+    <!-- common 사용시 필요한 파일 링크 -->
+    <link rel="stylesheet" href="../../resources/static/css/common.css">
+    <link rel="stylesheet" href="../../resources/static/css/reset.css">
+    <script src="../../resources/static/js/common.js"></script>
+
+</head>
+<body>
+
+
+    <!-- common nav 예시 -->
+    <nav include-html="./common/nav.html"></nav>
+
+    <section style="height: 500px;"></section>
+
+    <!-- common footer 예시 -->
+    <footer include-html="./common/footer.html"></footer>
+
+</body>
+
+
+<script>
+    includeHTML( function () {
+        includeRouter( function () {
+            // do something in the future
+        });
+    });
+</script>
+
+</html>

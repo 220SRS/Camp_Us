@@ -1,0 +1,22 @@
+.itd-containter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0 3rem 0;
+}
+
+
+.itd-containter > .item {
+    border: solid 1px #000;
+    width: 50%;
+    height: 250px;
+}
+
+.itd-containter > .item > img {
+    float: left;
+    border: solid 1px #000;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+
+}
