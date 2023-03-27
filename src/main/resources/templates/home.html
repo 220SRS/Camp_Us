@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampUs</title>
+
+    <!-- common 사용시 필요한 파일 링크 -->
+    <!-- css Files -->
+    <link rel="stylesheet" href="../../resources/static/css/common.css">
+    <link rel="stylesheet" href="../../resources/static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+
+    <!-- js Files -->
+    <script src="../../resources/static/js/common.js"></script>
+</head>
+<body>
+<!-- common nav 예시 -->
+<nav include-html="./common/nav.html"></nav>
+
+<section style="height: 10px;">
+
+</section>
+<div id="content">
+    <div class="main_spot"><a href="../../resources/templates/example.html">타닥타닥</a></div>
+
+    <div class="main_link">
+        <ul>
+            <li><a href="../../resources/templates/example.html" menu-link="1"><span class="ico_01">&nbsp;</span>
+                <p>캠핑장</p></a></li>
+            <li><a href="../../resources/templates/example.html" menu-link="2"><span class="ico_02">&nbsp;</span>
+                <p>카라반</p></a></li>
+            <li><a href="../../resources/templates/example.html" menu-link="3"><span class="ico_03">&nbsp;</span>
+                <p>글램핑</p></a></li>
+            <li><a href="../../resources/templates/example.html" menu-link="4"><span class="ico_04">&nbsp;</span>
+                <p>오토캠핑장</p></a></li>
+        </ul>
+    </div>
+
+    <div class="recommend">
+        <h2>게시판</h2>
+        <ul>
+            <li>
+            <a href="../../resources/templates/example.html" target="_blank"><img
+                    src="../../resources/static/images/night.jpg" alt="야경이 예쁜 곳"><strong>야경이 예쁜 곳"</strong>출장부터 복지까지<br>여기어때
+                비즈니스로 스마트하게</a>
+            </li>
+            <li>
+                <a href="../../resources/templates/example.html" target="_blank"><img
+                        src="../../resources/static/images/together.jpg" alt="야경이 예쁜 곳"><strong>야경이 예쁜 곳"</strong>출장부터
+                    복지까지<br>여기어때 비즈니스로 스마트하게</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<section style="height: 30px;">
+
+</section>
+
+<!-- common footer 예시 -->
+<footer include-html="./common/footer.html"></footer>
+
+
+</body>
+
+
+<script>
+    includeHTML(function () {
+        includeRouter(function () {
+            // do something in the future
+        });
+    });
+</script>
+
+
+</html>
