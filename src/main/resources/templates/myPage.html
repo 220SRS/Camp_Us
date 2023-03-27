@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampUs</title>
+
+
+    <!-- common 사용시 필요한 파일 링크 -->
+    <link rel="stylesheet" href="../../resources/static/css/common.css">
+    <link rel="stylesheet" href="../../resources/static/css/reset.css">
+    <link rel="stylesheet" href="../../resources/static/css/my.css">
+    <script src="../../resources/static/js/common.js"></script>
+</head>
+<body>
+    <!-- common nav 예시 -->
+    <nav include-html="./common/nav.html"></nav>
+
+<!--    <section style="height: 500px;"></section>-->
+    <div class="mypage">
+        <form name="form1" action="https://www.goodchoice.kr/my/mypageInfoUpdate" autocomplete="off" method="post" novalidate data-form="unick">
+            <!-- 폼전송시 전달되는 data target element -->
+            <div class="mypageForm__form-inputs-wrap" aria-hidden="true">
+                <input type="hidden" name="uno" value="7197054" />
+                <input type="text" name="unick" id="test1" aria-hidden="true" value="껌껌한찰밥" />
+                <input type="text" name="uname" aria-hidden="true" value="최재영" />
+                <input type="tel"  name="uphone" aria-hidden="true" value="01055564558" />
+            </div>
+
+            <input type="hidden" name="yeogi_token" value="b8559740f5eda360a8601ad7b945e972">
+            <input type="hidden" id="utype" name="utype" value="3">
+            <input type="hidden" name="utype" value="3">
+            <!--// 폼전송시 전달되는 data target element -->
+            <section class="top_area">
+                <strong>내 정보 수정</strong>
+                <div class="login_info">
+                    <div><img src="../static/images/레서.png" alt="panda"></div>
+                    <p>KakaoTalk 회원으로 로그인</p>
+                </div>
+
+                <div class="pw_input">
+                    <div class="pw_input__title">
+                        <b>닉네임</b>
+                        <span class="title__uinfo">껌껌한찰밥</span>
+                    </div>
+                    <section class="modifying-section" style="display: none;">
+                        <p class="inp_wrap remove form-errors">
+                            <input type="text" value="껌껌한찰밥"
+                                   placeholder="체크인시 필요한 정보입니다."
+                                   data-input="unick"
+                                   data-msg-required="닉네임을 입력하세요."
+                                   data-rule-minlength="2"
+                                   data-rule-maxlength="14"
+                                   data-rule-spaceChar="true"
+                                   data-rule-specialChar="true" />
+                        </p>
+                        <button type="button" class="btn_etc btn_confirm active" onclick="changeNickname();">딴거할래요</button> <!-- 활성화 클래스 'active' -->
+                    </section>
+                    <div class="pw_input__btns-wrap">
+                        <button class="btns-wrap__edit-btn" type="button">수정</button>
+                        <button class="btns-wrap__submit-btn" type="submit">수정완료</button>
+                        <button class="btns-wrap__cancel-btn" type="button">수정취소</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+        <form name="form2" action="https://www.goodchoice.kr/my/mypageInfoUpdate" autocomplete="off" method="post" novalidate data-form="uname">
+            <!-- 폼전송시 전달되는 data target element -->
+            <div class="mypageForm__form-inputs-wrap" aria-hidden="true">
+                <input type="hidden" name="uno" value="7197054" />
+                <input type="text" name="unick" aria-hidden="true" value="껌껌한찰밥" />
+                <input type="text" name="uname" aria-hidden="true" value="최재영" />
+                <input type="tel"  name="uphone" aria-hidden="true" value="01055564558" />
+            </div>
+            <input type="hidden" name="yeogi_token" value="b8559740f5eda360a8601ad7b945e972">
+            <input type="hidden" name="utype" value="3">
+
+            <section class="top_area">
+                <div class="pw_input">
+                    <div class="pw_input__title">
+                        <b>예약자 이름</b>
+                        <span class="title__uinfo">최재영</span>
+                    </div>
+                    <section class="modifying-section" style="display: none;">
+                        <p class="inp_wrap remove form-errors">
+                            <input type="text" id="uname"
+                                   value=""
+                                   placeholder="체크인시 필요한 정보입니다."
+                                   data-input="uname"
+                                   data-rule-spaceChar="true"
+                                   data-rule-specialChar="true"/>
+                        </p>
+                    </section>
+                    <div class="pw_input__btns-wrap">
+                        <button class="btns-wrap__edit-btn" type="button" style="?android:attr/borderlessButtonStyle">수정</button>
+                        <button class="btns-wrap__submit-btn"  type="submit">수정완료</button>
+                        <button class="btns-wrap__cancel-btn"  type="button" style="?android:attr/borderlessButtonStyle">수정취소</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+
+        <form  name="form3" action="https://www.goodchoice.kr/my/mypageInfoUpdate" autocomplete="off" method="post" novalidate data-form="uphone">
+            <section>
+                <!-- 폼전송시 전달되는 data target element -->
+                <div class="mypageForm__form-inputs-wrap" aria-hidden="true">
+                    <input type="hidden" name="uno" value="7197054" />
+                    <input type="text" name="unick" aria-hidden="true" value="껌껌한찰밥" />
+                    <input type="text" name="uname" aria-hidden="true" value="최재영" />
+                    <input type="tel" name="uphone" aria-hidden="true" value="01055564558" />
+                </div>
+                <input type="hidden" name="yeogi_token" value="b8559740f5eda360a8601ad7b945e972">
+                <input type="hidden" name="utype" value="3">
+                <div class="pw_input phone_confirm">
+                    <div class="pw_input__title">
+                        <b>휴대폰 번호</b>
+                        <span class="title__uinfo">01055564558</span>
+                        <div class="safety_txt">개인 정보 보호를 위해 내 정보는 모두 안전하게 암호화됩니다.</div>
+                    </div>
+                    <div class="modifying-section" style="display: none;">
+                        <div id="sendCode">
+                            <section>
+                                <div class="inp_wrap remove form-errors">
+                                    <input type="tel" id="phone_number" value=""
+                                           placeholder="체크인시 필요한 정보입니다."
+                                           maxlength="13"
+                                           data-input="uphone"
+                                           data-msg-required="휴대폰 번호를 인증받으세요."
+                                           data-rule-phonenumber="true" />
+                                    <button type="button" class="btn_checked">확인</button>
+                                </div>
+                                <button type="button" class="btn_send btn_confirm">인증번호 전송</button> <!-- 활성화 클래스 'active' -->
+                            </section>
+                        </div>
+                        <div id="verificationCode">
+                            <b>인증 번호</b>
+                            <section>
+                                <div class="inp_wrap remove">
+                                    <input type="tel" id="digit" minlength="4" maxlength="4">
+                                    <span class="timer">&nbsp;</span>
+                                </div>
+                                <button type="button" class="btn_ok btn_confirm"
+                                        data-verification-type="call"
+                                        data-verification-next="mypageVerify">확인</button>
+                            </section>
+                        </div>
+                        <input type="hidden" id="phone_certification_point" value="MYPAGE" style="display: none;">
+                    </div>
+                    <div class="pw_input__btns-wrap">
+                        <button class="btns-wrap__edit-btn " type="button">수정</button>
+                        <button class="btns-wrap__submit-btn" type="submit">수정완료</button>
+                        <button class="btns-wrap__cancel-btn" type="button">수정취소</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+        <!-- <button class="btn_submit disabled btn_one" type="submit">저장</button>-->
+
+    </div>
+    <!-- common footer 예시 -->
+    <footer include-html="./common/footer.html"></footer>
+
+</body>
+<script>
+    includeHTML( function () {
+        includeRouter( function () {
+            // do something in the future
+        });
+    });
+</script>
+<script>
+    // 수정 버튼 클릭시 수정 섹션 보이기
+    document.querySelectorAll('.btns-wrap__edit-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modifyingSection = this.parentElement.parentElement.querySelector('.modifying-section');
+        const submitBtn = this.parentElement.querySelector('.btns-wrap__submit-btn');
+        const cancelBtn = this.parentElement.querySelector('.btns-wrap__cancel-btn');
+        this.style.display = 'none';
+        modifyingSection.style.display = 'block';
+        submitBtn.style.display = 'block';
+        cancelBtn.style.display = 'block';
+      });
+    });
+
+    // 수정 취소 버튼 클릭시 수정 섹션 숨기기
+    document.querySelectorAll('.btns-wrap__cancel-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modifyingSection = this.parentElement.parentElement.querySelector('.modifying-section');
+        const editBtn = this.parentElement.querySelector('.btns-wrap__edit-btn');
+        const submitBtn = this.parentElement.querySelector('.btns-wrap__submit-btn');
+        this.style.display = 'none';
+        modifyingSection.style.display = 'none';
+        submitBtn.style.display = 'none';
+        editBtn.style.display = 'block';
+      });
+    });
+</script>
+
+<script>
+    sendBtn.addEventListener('click', function() {
+      sendCodeSection.style.display = 'none';
+      verificationCodeSection.style.display = 'block';
+    });
+</script>
+
+</html>
