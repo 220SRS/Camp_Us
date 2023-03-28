@@ -1,0 +1,15 @@
+/* Sub nav */
+.sub_wrap{min-height:390px}
+.sub_wrap nav{display:none}
+.sub_wrap nav ul li{margin-bottom:26px}
+.sub_wrap nav ul li a{display:block;font-size:18px;color:rgba(0,0,0,0.56)}
+.sub_wrap nav ul li a.active{font-size:18px;font-weight:bold;color:rgb(255,145,0)}
+.sub_wrap .sub_title{position:relative;height:44px;background:#fff;font-size:18px;line-height:44px;text-align:center}
+.sub_wrap .sub_title button{position:absolute;top:0;right:16px;height:44px;padding:0;border:none;background:none;font-size:14px;font-weight:bold}
+@media all and (min-width:1024px){
+    .sub_wrap nav{display:block;float:left;width:238px;padding-left:31px}
+    .sub_wrap .align_rt{float:right;width:724px;margin-right:31px}
+    .sub_wrap .sub_title{display:none}
+    .my_wrap{padding-top:54px;}
+    .sub_wrap{width:1024px !important;margin:0 auto 0 auto;padding-bottom:50px} /* Fix GNB 대응 */
+}
