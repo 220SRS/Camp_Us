@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampUs</title>
+
+
+    <!-- common 사용시 필요한 파일 링크 -->
+    <link rel="stylesheet" href="../../resources/static/css/common.css">
+    <link rel="stylesheet" href="../../resources/static/css/reset.css">
+    <link rel="stylesheet" href="../../resources/static/css/mypageInfo.css">
+
+    <!--사이드바-->
+    <link rel="stylesheet" href="../../resources/static/css/sidebar.css">
+
+    <script src="../../resources/static/js/common.js"></script>
+
+</head>
+<body>
+    <!-- common nav 예시 -->
+    <nav include-html="./common/nav.html"></nav>
+
+    <div id="content" class="sub_wrap my_wrap">
+        <!-- sidebar : 활성화 되어있는 목록명에 class = "active" 부여-->
+        <nav>
+            <ul>
+                <li><a class="active" href="../../resources/templates/myPageInfo.html" class="">내 정보</a></li>
+                <li><a href="../resources/templates/home.html">예약 내역</a></li>
+                <li><a href="../resources/templates/home.html" class="">리뷰 관리</a></li>
+            </ul>
+        </nav>
+        <div class="align_rt">
+            <div class="reservation">
+                <main class="container align_rt" data-v-f012d516="">
+                    <h3 class="page-title pc-only" data-v-f012d516="">내 정보 수정</h3>
+                </main>
+            </div>
+
+            <div class="box">
+                <img class= "profile" src="../static/images/레서.png" alt="Panda">
+            </div>
+
+            <b>닉네임</b>
+            <span>껌껌한찰밥</span>
+
+            <div>
+                <button type="button" class="btn btn-outline-secondary">수정</button>
+                <button type="button" class="btn btn-outline-secondary">수정 완료</button>
+                <button type="button" class="btn btn-outline-secondary">수정 취소</button>
+            </div>
+
+            <b>예약자 이름</b>
+            <span>최재영</span>
+            <div>
+                <button type="button" class="btn btn-outline-secondary">수정</button>
+                <button type="button" class="btn btn-outline-secondary">수정 완료</button>
+                <button type="button" class="btn btn-outline-secondary">수정 취소</button>
+            </div>
+
+            <b>휴대폰 번호</b>
+            <span>01055564558</span>
+
+            <div>
+                <button type="button" class="btn btn-outline-secondary">수정</button>
+                <button type="button" class="btn btn-outline-secondary">수정 완료</button>
+                <button type="button" class="btn btn-outline-secondary">수정 취소</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <section style="height: 500px;"></section>
+
+    <!-- common footer 예시 -->
+    <footer include-html="./common/footer.html"></footer>
+
+</body>
+
+
+<script>
+    includeHTML( function () {
+        includeRouter( function () {
+            // do something in the future
+        });
+    });
+</script>
+
+</html>

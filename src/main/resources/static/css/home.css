@@ -21,26 +21,11 @@
 @media all and (min-width:768px){
     .main_spot{height:50vw;background:#fff url('../images/main_img.jpg') 50% 100% no-repeat;background-size:100% 100%;}
     .main_spot a {height:50vw;}
-    /* .main_spot{height:50vw; background:white;}
-    .video-wrap {position: relative;bottom: 0;left: 0;margin:0 auto;width: 100%;clear: both;z-index: 1;background-size: 100% 100%;background-repeat: repeat-x;background-position: left top;}
-    .video-wrap .wrapper {position:relative; width:100%; height:0; padding-top:50.25%;}
-    .video-wrap .wrapper iframe {position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%;} */
-
-    .ad_ask{overflow:hidden;margin-bottom:40px;}
-    .ad_ask ul li{height:auto;border:1px solid rgba(0,0,0,0.04);}
-    .ad_ask ul li:first-child{display:inline-block;float:left;width:49%;}
-    .ad_ask ul li:last-child{display:inline-block;float:right;width:49%}
-    .ad_ask ul li a{display:block;height:auto;padding:0 0 0;text-align:center;}
-    .ad_ask ul li a img{width:100%}
 }
 
 @media all and (min-width:1024px){
     .main_spot{height:450px;background:#fff url('../images/main_img.jpg') 50% 100% no-repeat;background-size:924px auto;}
     .main_spot a {height:450px;}
-    /* .main_spot{height:465px; background:white;}
-    .video-wrap {position: relative;bottom: 0;left: 0;margin:115px auto 0 auto;width: 924px;clear: both;z-index: 1;background-size: 100% 100%;background-repeat: repeat-x;background-position: left top;}
-    .video-wrap .wrapper {position:relative; width:100%; height:0; padding-top:50.25%;}
-    .video-wrap .wrapper iframe {position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%;} */
     .main_link{padding:32px 0 29px 41px;background:rgb(253,253,253)}
     .main_link ul{overflow:hidden;width:1024px;margin:0 auto}
     .main_link li{float:left;width:25%}
@@ -60,22 +45,5 @@
     .recommend li img{position:absolute;top:0;left:0;width:162px;height:162px}
     .recommend li strong{display:block;padding:38px 0 14px 0;font-size:20px;line-height:1;font-weight:normal;color:rgb(0,121,107)}
     .recommend li .img_ready{border-right:1px solid rgba(0,0,0,0.08)}
-    .appdown{display:block;overflow:hidden;width:962px;height:320px;margin:64px auto 78px auto;background:url('//image.goodchoice.kr/images/web_v3/bg_appdown.png') center center no-repeat;background-size:cover;text-align:center}
-    .appdown p{margin:103px 0 27px 0;font-size:28px;color:rgba(0,0,0,0.87)}
-    .appdown div a{display:inline-block;width:168px;height:52px;margin:0 4px;}
-    .appdown div a img{width:168px;height:auto}
-    .appdown div button{display:none}
-    .event_main{width:962px;margin:0 auto;}
-    .event_main h2{padding:0;}
-    .ad_ask .pc{display:block;}
-    .ad_ask .mobile{display:none;}
-    .ad_ask{width:962px;margin:24px auto 0 auto}
-    .ad_ask ul li{height:200px;border:1px solid rgba(0,0,0,0.04);}
-    .ad_ask ul li:first-child{display:inline-block;float:left;width:473px;}
-    .ad_ask ul li:last-child{display:inline-block;float:right;width:473px;}
-    .ad_ask ul li a{display:block;height:200px;padding:0 0 0;}
-    .ad_ask ul li a img{width:auto;height:200px;}
-
-    .area_pop{display:none !important}
 } /* Media query Close */
 
