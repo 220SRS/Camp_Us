@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampUs</title>
+
+
+    <!-- common 사용시 필요한 파일 링크 -->
+    <link rel="stylesheet" href="../../resources/static/css/common.css">
+    <link rel="stylesheet" href="../../resources/static/css/reset.css">
+    <link rel="stylesheet" href="../../resources/static/css/searchpage.css">
+    <script src="../../resources/static/js/common.js"></script>
+
+</head>
+<body>
+
+    <!-- common nav 예시 -->
+    <nav include-html="./common/nav.html"></nav>
+
+    <section style="height: 500px;">
+
+        <div>
+            <span>
+                <span class="btn_date">
+                   <!-- <span class="date_view">
+                        <b>3.29 ~ 3.30</b>
+                        <em>&nbsp;·&nbsp;1박</em>
+                    </span>-->
+                    날짜 <input type="date">
+                </span>
+            </span>
+            <span>
+                인원
+                <!--<div class="cnt_people" data-min="2" data-max="10" data-def="2">-->
+                <button type="button" class="disable dn">-</button>
+                <span>2</span>
+                <button type="button" class=" up">+</button>
+
+            </span>
+            <span>
+                <button type="button" class="btn_srch" style="right: 396px;">
+                    <img src="../../resources/static/images/image_srch_button.png" width="30" height="30" alt="검색용 돋보기 이미지">
+                    <!--돋보기 이미지의 크기가 div크기에 영향을 받도록 해야한다. 절대값말고 상대값이어야함-->
+                    <!--버튼 배경색 어떻게 한꺼번에 하얗게..?-->
+                </button>
+            </span>
+        </div>
+
+
+        <div class="main_option">
+            <ul class="tab_section">
+                <li class="area_section">
+                    <button type="button" class="btn_area_option">
+                        <span class="input_placeholder">지역선택</span>
+                        <span class="input_text"></span>
+                    </button>
+                </li>
+                <li class="camp_type_section">
+                    <button type="button" class="btn_camptype_option">
+                        <span class="input_placeholder">캠핑종류선택</span>
+                        <span class="input_text"></span>
+                    </button>
+                </li>
+                <li class="default_option_section">
+                    <button type="button" class="btn_default_option">
+                        <span class="input_placeholder">기본옵션선택</span>
+                        <span class="input_text"></span>
+                    </button>
+                </li>
+                <li class="detail_option_section">
+                    <button type="button" class="btn_detail_option">
+                        <span class="input_placeholder">상세옵션선택</span>
+                        <span class="input_text"></span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn_srch" style="right: 396px;">
+                        <img src="../../resources/static/images/image_reset.png" width="30" height="30" alt="초기화 이미지">
+                        <!--이미지의 크기가 div크기에 영향을 받도록 해야한다. 절대값말고 상대값이어야함-->
+
+                    </button>
+                </li>
+            </ul>
+            <div class="wrap_section_contents">
+                <div class="option_content area_option">
+                    <div class="box_camptype">
+                        <script id="sp_job_category_home_template" type="text/x-handlebars-template">
+                            {{#mclsList}}
+                            {{#hasCountInJobCategory count}}
+                            <button type="button" class="btn_job" data-mcls_cd_no="{{mclsCdNo}}">{{mclsCdNm}}</button>
+                            {{/hasCountInJobCategory}}
+                            {{/mclsList}}
+                        </script>
+                        <button type="button" class="btn_job" data-mcls_cd_no="16">오토캠핑</button>
+                        <button type="button" class="btn_job" data-mcls_cd_no="16">카라반</button>
+                        <button type="button" class="btn_job" data-mcls_cd_no="16">글램핑</button>
+                        <button type="button" class="btn_job" data-mcls_cd_no="16">등등</button>
+                    </div>
+                </div>
+                <div class="option_content camptype_option"></div>
+                <div class="option_content default_option"></div>
+                <div class="option_content detail_option"></div>
+            </div>
+        </div>
+        <div>
+            <span>1</span>
+        </div>
+
+
+
+
+
+    </section>
+
+    <!-- common footer 예시 -->
+    <footer include-html="./common/footer.html"></footer>
+
+</body>
+
+<script>
+    includeHTML( function () {
+        includeRouter( function () {
+            // do something in the future
+        });
+    });
+</script>
+
+</html>
