@@ -1,12 +1,52 @@
-.sub_title {
-    display: block;
-    margin:30px 0 10px 0;
-    font-size:18px;
+.category-nickName {
+    padding: 0 0 11px 0;
+    margin: 0 80px 0 0;
+    font-size:16px;
     font-weight: bold;
 }
 
+.category-name {
+    margin: 0 40px 11px 0;
+    font-size:16px;
+    font-weight: bold;
+}
+
+.category-phone {
+    margin: 0 40px 0 0;
+    font-size:16px;
+    font-weight: bold;
+}
+
+.btn-box {
+    width: 25%;
+    margin: 11px 0 30px 0;
+}
+
+.btn-box:hover {
+    background-color:#ff9100;
+    transaction: 0.7s;
+}
+
+.subBtn-box {
+    width: 25%;
+    margin: 15px 0 40px 0;
+}
+
+.subBtn-box:hover {
+    background-color:#ff9100;
+    transaction: 0.7s;
+}
+
+.text-box {
+    margin:30px 0 12px 0;
+}
+
+.text {
+    width: 50%;
+}
+
 .box {
-    margin:30px 0 10px 0;
+    margin:60px 0 30px 0;
     width: 150px;
     height: 150px;
     border-radius: 50%;
