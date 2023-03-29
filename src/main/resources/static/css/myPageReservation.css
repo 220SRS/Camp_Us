@@ -1,5 +1,153 @@
-#tools{
-    background:#eee;
-    padding:5px;
-    margin-bottom:100px;
+.tools {
+    background: #ffd180;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* Drop down select filters */
+.styled-select-filters select {
+    background: transparent;
+    width: 107%;
+    padding: 7px 5px 5px 10px;
+    border: 0;
+    border-radius: 0;
+    height: 31px;
+    margin: 0;
+    font-weight: 400;
+    -moz-appearance: window;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #888;
+}
+
+.styled-select-filters {
+    width: 100%;
+    overflow: hidden;
+    height: 34px;
+    background: #fff url("../images/down_arrow_select_filters.png") no-repeat right center;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+    display: block;
+}
+
+.styled-select-filters select::-ms-expand {
+    display: none;
+}
+
+.styled-select-filters select:focus {
+    outline: none;
+}
+
+/* Booking */
+.strip_booking {
+    border-bottom: 1px solid #ededed;
+    /*padding-bottom: 15px;*/
+    /*margin-bottom: 15px;*/
+}
+
+.strip_booking h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+    top: 10px;
+    padding-left: 65px;
+}
+
+.strip_booking h3 span {
+    color: #999;
+    display: block;
+    font-size: 11px !important;
+}
+
+.strip_booking h3.hotel_booking:before, .strip_booking h3.tours_booking:before, .strip_booking h3.transfers_booking:before {
+    font-style: normal;
+    font-weight: normal;
+    font-family: "icon_set_1";
+    font-size: 24px;
+    color: #e04f67;
+    position: absolute;
+    border: 1px solid #ededed;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    left: 0;
+    top: -10px;
+    text-align: center;
+    line-height: 50px;
+}
+.photo{
+    /* photo size 수정*/
+}
+.strip_booking h3.hotel_booking:before {
+    content: "\26";
+}
+a.btn_2, .btn_2, a.btn_3, .btn_3 {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+    background: #ff9100 ;
+    cursor: pointer;
+    padding: 7px 8px;
+    font-size: 11px;
+    line-height: 9px;
+    display: block;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
+a.btn_3, .btn_3{
+    color:#999;
+    background: #eee;
+    min-width:60px;
+    text-align:center;
+    margin-top:3px;
+}
+a.btn_2:hover, .btn_2:hover, a.btn_3:hover, .btn_3:hover {
+    background: #333;
+    color: #fff;
+}
+
+ul.info_booking {
+    list-style: none;
+    margin: 0;
+    padding: 10px 25px 15px 0;
+    font-size: 12px;
+    color: #999;
+    line-height: 12px;
+    border-right: 1px solid #ededed;
+    text-align: right
+}
+
+ul.info_booking li {
+    margin-bottom: 10px;
+}
+
+ul.info_booking li strong {
+    margin-bottom: 3px;
+    display: block;
+    color: #555;
+}
+.booking_buttons{
+    margin-top:20px;
+}
+@media screen and (max-width: 52.375em) {
+    ul.info_booking {
+        padding: 30px 0 15px 0;
+        border-right: none;
+        text-align: left;
+    }
+    .booking_buttons{
+        margin-top:0;
+    }
 }

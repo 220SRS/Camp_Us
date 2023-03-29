@@ -7,6 +7,11 @@
     <title>CampUs</title>
 
 
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <!-- common 사용시 필요한 파일 링크 -->
     <link rel="stylesheet" href="../../resources/static/css/common.css">
     <link rel="stylesheet" href="../../resources/static/css/reset.css">
@@ -30,20 +35,71 @@
     <!-- sidebar : 활성화 되어있는 목록명에 class = "active" 부여-->
     <nav>
         <ul>
-            <li><a class="active" href="../resources/templates/home.html" class="">내 정보</a></li>
-            <li><a href="../resources/templates/home.html">예약 내역</a></li>
-            <li><a href="../resources/templates/home.html" class="">리뷰 관리</a></li>
+            <li><a href="../../resources/templates/mypageInfo.html" class="">내 정보</a></li>
+            <li><a class="active" href="../../resources/templates/myPageReservation.html">예약 내역</a></li>
+            <li><a href="../../resources/templates/home.html" class="">리뷰 관리</a></li>
         </ul>
     </nav>
     <div class="align_rt">
-        <div class="reservation">
-            <main class="container align_rt" data-v-f012d516="">
-                <h3 class="page-title pc-only" data-v-f012d516="">예약 내역</h3>
-            </main>
-        </div>
-        
-    </div>
+        <div class="container align_rt" data-v-f012d516="">
+            <h3 class="page-title pc-only" data-v-f012d516="">예약 내역</h3>
 
+            <div class="tools">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="styled-select-filters">
+                            <select name="used_type" id="used_type">
+                                <option value="" selected="using">이용중</option>
+                                <option value="complete">완료</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="styled-select-filters">
+                            <select name="sort_date" id="sort_date">
+                                <option value="" selected="">최근 6개월</option>
+                                <option value="oldest">최근 1년</option>
+                                <option value="recent">전체</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="strip_booking">
+                    <div class="card-body strip_booking">
+
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="photo">
+                                    <img src="../../resources/static/images/together.jpg" alt=""/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-5">
+                                <h3 class="hotel_booking">Hotel Mariott Paris<span >2022.02.03</span></h3>
+                            </div>
+                            <div class="col-md-2 col-sm-3">
+                                <ul class="info_booking">
+                                    <li><strong>예약번호</strong> 23442</li>
+                                    <li><strong>금액</strong>150000</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="booking_buttons">
+                                    <a href="#0" class="btn_2">리뷰 등록</a>
+                                    <a href="#0" class="btn_3">삭제</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 
 </div>
 
