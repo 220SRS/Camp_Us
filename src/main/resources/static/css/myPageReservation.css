@@ -62,7 +62,7 @@
     font-size: 11px !important;
 }
 
-.strip_booking h3.hotel_booking:before, .strip_booking h3.tours_booking:before, .strip_booking h3.transfers_booking:before {
+.strip_booking .strip_booking h3.tours_booking:before, .strip_booking h3.transfers_booking:before {
     font-style: normal;
     font-weight: normal;
     font-family: "icon_set_1";
@@ -80,18 +80,29 @@
     text-align: center;
     line-height: 50px;
 }
-.photo{
-    /* photo size 수정*/
-}
-.strip_booking h3.hotel_booking:before {
+
+/*.strip_booking h3.hotel_booking:before {
     content: "\26";
 }
+*/
+.card {
+    margin-bottom: 15px;
+}
+
+#cards-container {
+    margin-top: 15px;
+}
+
+.photo {
+    /* photo size 수정*/
+}
+
 a.btn_2, .btn_2, a.btn_3, .btn_3 {
     border: none;
     font-family: inherit;
     font-size: inherit;
     color: #fff;
-    background: #ff9100 ;
+    background: #ff9100;
     cursor: pointer;
     padding: 7px 8px;
     font-size: 11px;
@@ -106,13 +117,15 @@ a.btn_2, .btn_2, a.btn_3, .btn_3 {
     border-radius: 3px;
     text-align: center;
 }
-a.btn_3, .btn_3{
-    color:#999;
+
+a.btn_3, .btn_3 {
+    color: #999;
     background: #eee;
-    min-width:60px;
-    text-align:center;
-    margin-top:3px;
+    min-width: 60px;
+    text-align: center;
+    margin-top: 3px;
 }
+
 a.btn_2:hover, .btn_2:hover, a.btn_3:hover, .btn_3:hover {
     background: #333;
     color: #fff;
@@ -138,16 +151,19 @@ ul.info_booking li strong {
     display: block;
     color: #555;
 }
-.booking_buttons{
-    margin-top:20px;
+
+.booking_buttons {
+    margin-top: 20px;
 }
+
 @media screen and (max-width: 52.375em) {
     ul.info_booking {
         padding: 30px 0 15px 0;
         border-right: none;
         text-align: left;
     }
-    .booking_buttons{
-        margin-top:0;
+
+    .booking_buttons {
+        margin-top: 0;
     }
 }

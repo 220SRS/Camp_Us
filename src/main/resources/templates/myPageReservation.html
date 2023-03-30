@@ -8,7 +8,8 @@
 
 
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
@@ -31,7 +32,7 @@
 <nav include-html="./common/nav.html"></nav>
 
 
-<section style="height: 30px;"></section>
+<section style="height: 10px;"></section>
 
 <div id="content" class="sub_wrap my_wrap">
     <!-- sidebar : 활성화 되어있는 목록명에 class = "active" 부여-->
@@ -68,35 +69,8 @@
                 </div>
             </div>
 
-            <div class="card">
-                <div class="strip_booking">
-                    <div class="card-body strip_booking">
-
-                        <div class="row">
-                            <div class="col-md-2 col-sm-2">
-                                <div class="photo">
-                                    <img src="../../resources/static/images/together.jpg" alt=""/>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-5">
-                                <h3 class="hotel_booking">Hotel Mariott Paris<span >2022.02.03</span></h3>
-                            </div>
-                            <div class="col-md-2 col-sm-3">
-                                <ul class="info_booking">
-                                    <li><strong>예약번호</strong> 23442</li>
-                                    <li><strong>금액</strong>150000</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-2 col-sm-2">
-                                <div class="booking_buttons">
-                                    <a href="#0" class="btn_2">리뷰 등록</a>
-                                    <a href="#0" class="btn_3">삭제</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+            <div id="cards-container">
+                <script src="../../resources/static/js/myPageReservation.js"></script>
             </div>
 
 
@@ -105,7 +79,7 @@
 
 </div>
 
-
+<section style="height: 500px;"></section>
 <!-- common footer 예시 -->
 <footer include-html="./common/footer.html"></footer>
 
