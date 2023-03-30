@@ -25,12 +25,21 @@ input:focus {outline:none;}
 select:focus {outline:none;}
 
 
+/* 폰트 초기화 font-family */
 p,div,span,a {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 h1,h2,h3,h4 {
   font-family: 'Black Han Sans', sans-serif;
+}
+
+/* clearfix */
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+  overflow: hidden;
 }
 
 /* ---------------------------- common ----------------------- */
