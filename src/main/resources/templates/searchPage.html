@@ -50,17 +50,169 @@
         </div>
         <div class="tab">
             <ul class="tabnav">
-                <li><a href="#tab01">탭1</a></li>
-                <li><a href="#tab02">탭2</a></li>
+                <li><a href="#tab01">지역</a></li>
+                <li><a href="#tab02">캠핑종류</a></li>
+                <li><a href="#tab03">기본옵션</a></li>
+                <li><a href="#tab04">상세옵션</a></li>
+                <li><a href="#tab05"><img src="../../resources/static/images/image_reset.png" width="30" height="30" alt="검색용 돋보기 이미지"></a></li>
+                <!-- 탭5는 내용이 없다. 그냥 검색 버튼 기능만 있어야한다
+                그런데 탭 내용이 빈걸로 넘어가지롱~ 해결해야 한다! -->
             </ul>
             <div class="tabcontent">
-                <div id="tab01">tab1 content</div>
-                <div id="tab02">tab2 content</div>
+                <div id="tab01">
+                    <div class="container text-center">
+                        <div class="col">
+                                <div id="suggestion_block">
+                                    <label id="suggestion_area"><span class="txt">타닥타닥 추천!</span></label>
+                                    <button type="button" class="btn btn-outline-danger">여기어때?</button>
+                                    <button type="button" class="btn btn-outline-danger">저기어때?</button>
+                                    <button type="button" class="btn btn-outline-danger">서울 강남구</button>
+                                    <!-- 여기 버튼 마우스 오버하면 색은 변하는데 선택이 안된다-->
+                                </div>
+                                <div class="col">
+                                    <div class="container text-center">
+                                        <div class="row row-cols-5">
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">서울</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">인천</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">경기</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">부산</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">울산</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">대구</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">광주</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">대전</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">제주</span></label>
+                                            </div>
+                                            <div class="area_block">
+                                                <input type="checkbox" data-check-type="">
+                                                <label class="at1"><span class="txt">기타</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div id="tab02">
+                    <div class="container text-center">
+                        <div class="row row-cols-4">
+                            <div class="camping_type_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">오토캠핑</span></label>
+                            </div>
+                            <div class="camping_type_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">글램핑</span></label>
+                            </div>
+                            <div class="camping_type_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">카라반</span></label>
+                            </div>
+                            <div class="camping_type_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">기타(펜션)</span></label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="tab03">
+                    <div class="container text-center">
+                        <div class="row row-cols-3" >
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">샤워실</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">매점</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">와이파이</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">주차장</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">반려동물</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">주차장</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">장비대여</span></label>
+                            </div>
+                            <div class="option_block">
+                                <input type="checkbox" data-check-type="">
+                                <label class="at1"><span class="txt">기본장비</span></label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="tab04">
+                    <div class="row row-cols-3" >
+                        <div class="option_block">
+                            <input type="checkbox" data-check-type="">
+                            <label class="at1"><span class="txt">바닥</span></label>
+                        </div>
+                        <div class="option_block">
+                            <input type="checkbox" data-check-type="">
+                            <label class="at1"><span class="txt">입지형태(?)</span></label>
+                        </div>
+                        <div class="option_block">
+                            <input type="checkbox" data-check-type="">
+                            <label class="at1"><span class="txt">부가시설</span></label>
+                        </div>
+                        <div class="option_block">
+                            <input type="checkbox" data-check-type="">
+                            <label class="at1"><span class="txt">레저</span></label>
+                        </div>
+                        <div class="option_block">
+                            <input type="checkbox" data-check-type="">
+                            <label class="at1"><span class="txt">트레일러</span></label>
+                        </div>
+                        <div class="option_block">
+                            <input type="checkbox" data-check-type="">
+                            <label class="at1"><span class="txt">카라반 진입</span></label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div>
-            <span>1</span>
-        </div>
+
 
 
 
