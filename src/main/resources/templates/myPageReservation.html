@@ -40,6 +40,7 @@
             <li><a href="../../resources/templates/home.html" class="">리뷰 관리</a></li>
         </ul>
     </nav>
+
     <div class="align_rt">
         <div class="container align_rt" data-v-f012d516="">
             <h3 class="page-title pc-only testjs" data-v-f012d516=""></h3>
@@ -71,39 +72,38 @@
             </div>
 
             <div id="cards-container">
-                <script src="../../resources/static/js/myPageReservation.js"></script>
             </div>
         </div>
     </div>
 
-
-    <div class="modal-backdrop fade in" style="height: 975px;"></div>
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myReviewLabel">OO 캠핑장</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body">
-                <!-- 별점 부여 -->
-
-
-                <div id="photo-review">
+    <!-- TODO : Demuu - 여기 페이지에도 일단 구현해놨어요. 근데 이렇게 하면 첫번째 카드에만 기능이 적용 됩니다...-->
+    <div id="modalBox" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div><h4 class="modal-title" id="myModalLabel">00 캠핑장 </h4></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBtn"><span
+                            aria-hidden="true">&times;</span></button>
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>-->
                 </div>
-
-                <span>리뷰 작성</span>
-                <form method="post" action="assets/review_hotel.php" name="review_hotel" id="review_hotel">
-                    <div class="form-group">
-                        <textarea name="review_text" id="review_text" class="form-control" style="height:100px"
-                                  placeholder="Write your review"></textarea>
+                <div class="modal-body">
+                    <div><span>💡💡💡💡💡💡</span></div>
+                    <div class="reviewImg">
+                        <img src="../../resources/static/images/night.jpg" alt="..." class="img-thumbnail rounded">
                     </div>
-                    <input type="submit" value="Submit" class="btn_1" id="submit-review">
-                </form>
+                    <p class="h5">리뷰 작성</p>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">확인</button>
+                    <!--<button type="button" class="btn btn-default" id="closeModalBtn">취소</button>-->
+                </div>
             </div>
         </div>
     </div>
-
 
 </div>
 
@@ -112,8 +112,10 @@
 
 
 </body>
+<script src="../../resources/static/js/myPageReservation.js"></script>
 
-
+<!-- TODO : Demmu - modal에 대한 기능이 정의되어있는 js파일입니닷 -->
+<script src="../../resources/static/js/modal.js"></script>
 <script>
     includeHTML(function () {
         includeRouter(function () {
