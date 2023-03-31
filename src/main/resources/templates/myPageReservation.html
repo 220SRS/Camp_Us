@@ -24,7 +24,6 @@
 
     <script src="../../resources/static/js/common.js"></script>
 
-
 </head>
 <body>
 
@@ -45,8 +44,8 @@
         <div class="container align_rt" data-v-f012d516="">
             <h3 class="page-title pc-only testjs" data-v-f012d516=""></h3>
             <script>
-                let a="fkfkfkfkf";
-                document.getElementsByClassName("testjs").innerText = a;
+                let a = "fkfkfkfkf";
+                document.getElementsByClassName("testjs")[0].innerText = a;
             </script>
 
             <div class="tools">
@@ -74,10 +73,37 @@
             <div id="cards-container">
                 <script src="../../resources/static/js/myPageReservation.js"></script>
             </div>
-
-
         </div>
     </div>
+
+
+    <div class="modal-backdrop fade in" style="height: 975px;"></div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myReviewLabel">OO 캠핑장</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <!-- 별점 부여 -->
+
+
+                <div id="photo-review">
+                </div>
+
+                <span>리뷰 작성</span>
+                <form method="post" action="assets/review_hotel.php" name="review_hotel" id="review_hotel">
+                    <div class="form-group">
+                        <textarea name="review_text" id="review_text" class="form-control" style="height:100px"
+                                  placeholder="Write your review"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" class="btn_1" id="submit-review">
+                </form>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 

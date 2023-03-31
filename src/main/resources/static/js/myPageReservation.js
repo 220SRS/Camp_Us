@@ -37,38 +37,8 @@ const reservationData = [
         campingName: "Hotel Sofitel Seoul",
         reservationNo: "23532",
         reservationPrice: "120000",
-    },
-    {
-        img: "../../resources/static/images/together.jpg",
-        reservationDate: "2022.03.15",
-        campingName: "Hotel Sofitel Seoul",
-        reservationNo: "23532",
-        reservationPrice: "120000",
-    },
-    {
-        img: "../../resources/static/images/together.jpg",
-        reservationDate: "2022.03.15",
-        campingName: "Hotel Sofitel Seoul",
-        reservationNo: "23532",
-        reservationPrice: "120000",
-    },
-    {
-        img: "../../resources/static/images/together.jpg",
-        reservationDate: "2022.03.15",
-        campingName: "Hotel Sofitel Seoul",
-        reservationNo: "23532",
-        reservationPrice: "120000",
-    },
-    {
-        img: "../../resources/static/images/together.jpg",
-        reservationDate: "2022.03.15",
-        campingName: "Hotel Sofitel Seoul",
-        reservationNo: "23532",
-        reservationPrice: "120000",
     }
 ];
-
-
 
 // 예약 정보 카드를 보여주는 함수
 function showReservationData(reservationData) {
@@ -90,6 +60,9 @@ function showReservationData(reservationData) {
             <div class="col-md-2 col-sm-3">
               <ul class="info_booking">
                 <li><strong>예약번호</strong> ${data.reservationNo}</li>
+                
+                
+        
                 <li><strong>금액</strong> ${data.reservationPrice}</li>
               </ul>
             </div>
@@ -105,5 +78,9 @@ function showReservationData(reservationData) {
         container.innerHTML += cardHtml;
     }
 }
+
+
+
+
 
 showReservationData(reservationData);
