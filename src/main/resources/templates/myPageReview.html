@@ -22,6 +22,10 @@
 
   <script src="../../resources/static/js/common.js"></script>
 
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
 
 </head>
 <body>
@@ -45,20 +49,55 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-box">
+    <div class="review-board-wrapper">
+      <div class="review-board">
+        <div class="review-profile">
           <img class="img" src="../static/images/레서.png" alt="Panda">
+        </div>
 
-          <div class="titleBox">
-            <p>기대 이상이네요.</p>
-            <img class="star-img" src="../static/images/star.png" alt="Star">
-            <span>4.6</span>
-            <div class="subTitle">
-              <span>더블룸 객실 이용 ·</span><span>껌껌한찰밥</span>
+        <div class="titleBox">
+          <p class="title-content">기대 이상이네요.</p>
+          <button id="delete-review-btn" onclick="button_event()">
+            <img class="img" src="../static/images/X_button.png">
+          </button>
+          <img class="star-img" src="../static/images/star.png" alt="Star">
+          <span>4.6</span>
+        </div>
+
+          <div class="subTitle">
+            <span>더블룸 객실 이용 ·</span><span>껌껌한찰밥</span>
+          </div>
+
+          <div class="content-box">
+            <span class="review-content">
+              원래 다니던 캠핑장이 없어져서 다닐 곳을 찾다가 방문했는데 기대 이상이었어요!
+              침대랑 바닥 장판이 따뜻해서 푹 잘 잤고 바베큐랑 캠프파이어 서비스도 잘 해주셔서 감사했어요 귀여운 고양이와 옆 집 강아지도 있어요
+              무엇보다 사장님이 너무 친절하셔서 기분 좋았습니다! 매점에서 간단한 간식과 라면, 오로라불멍과 마시멜로우도 살 수 있어 간편했어요!
+              번창하세요
+            </span>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <img class="swiper-slide" src="../static/images/camping_img1.png" alt="camping-img1">
+                <img class="swiper-slide" src="../static/images/camping_img2.png" alt="camping-img1">
+                <img class="swiper-slide" src="../static/images/camping_img3.png" alt="camping-img1">
+                <img class="swiper-slide" src="../static/images/camping_img4.png" alt="camping-img1">
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="review-date">
+              <span>3일전</span>
             </div>
           </div>
-        </div>
       </div>
+
+    <script src="../../resources/static/js/myPageReview.js"></script>
+    </div>
+
 
     </div>
   </div>
@@ -69,7 +108,24 @@
   <footer include-html="./common/footer.html"></footer>
 
 </body>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  </script>
 
 <script>
     includeHTML( function () {
@@ -77,6 +133,19 @@
             // do something in the future
         });
     });
+</script>
+
+<script>
+    function button_event(){
+
+    if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+        var form = document.test;
+        form.submit();
+
+    }else{   //취소
+        return;
+      }
+    }
 </script>
 
 </html>
