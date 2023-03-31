@@ -20,18 +20,34 @@
 <nav include-html="./common/nav.html"></nav>
 <div class="reserve">
     <div class="left">
-        <div class="reservation_information">예약자 정보</div>
-        <div class="reservation_name">예약자 이름</div>
+        <div class="reservation_information">예약자 정보
+        <div class="reservation_name">이름</div>
         <input id="name" type="text" name="reservation_name" placeholder="예약자 이름을 입력해주세요.">
         <br>
-        <div class="reservation_phone">휴대폰 번호</div>
-        <input id="phone" type="text" name="reservation_phone" placeholder="휴대폰 번호를 입력해주세요.">
+        <div class="reservation_phone">연락처</div>
+        <input id="phone" type="text" name="reservation_phone" placeholder="연락처를 입력해주세요.">
+        <br>
+        <div class="reservation_email">이메일</div>
+        <input id="email" type="text" name="reservation_phone" placeholder="이메일을 입력해주세요.">
+        <br>
+        <div class="reservation_request">요청사항</div>
+        <input id="request" type="text" name="reservation_phone" placeholder="요청사항을 입력해주세요.">
+        </div>
     </div>
     <div class="right">
-        <div class="camping_name">캠핑장이름</div>
-        <h4>나도캠핑가고싶어</h4>
-        <div class="camping_type">캠핑타입</div>
-        <h4>카라반</h4>
+        <div class="camping_information">
+            <h4 class="camping_info">캠핑장 정보</h4>
+            <p class="camping_name">바다근처캠핑랜드</p>
+            <p class="camping_mention">서울에서 부산을 느껴보세요 / 차박가능</p>
+        </div>
+
+        <div class="additional_options">
+            <h4 class="options">추가 옵션</h4>
+            <div class="option_list">
+                <p>튜브 대여(무료) - 0원</p>
+                <p>*튜브 대여는 무료입니다*</p>
+            </div>
+        </div>
     </div>
 </div>
 

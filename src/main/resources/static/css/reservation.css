@@ -1,28 +1,36 @@
 .reserve{
     display: flex;
+    justify-content: center;
 }
 
 .left{
     width: 600px;
-    height: 1134px;
-    margin: 80px;
+    height: 1000px;
+    margin: 60px;
+}
+
+.center1{
+    width: 500px;
+    height: 900px;
+    margin: 60px;
+}
+
+.center2{
+    width: 500px;
+    height: 900px;
+    margin: 60px;
 }
 
 .reservation_information{
     font-size: 30px;
     font-weight: bold;
-    padding-bottom: 30px;
+    padding-bottom: 70px;
 }
 
 .reservation_name{
     font-size: 20px;
+    padding-top: 20px;
     padding-bottom: 20px;
-}
-
-#name{
-    width: 280px;
-    height: 50px;
-    font-size: 20px;
 }
 
 .reservation_phone{
@@ -31,31 +39,101 @@
     padding-bottom: 20px;
 }
 
-#phone{
-    width: 280px;
+.reservation_email{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.reservation_request{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#name{
+    width: 400px;
     height: 50px;
     font-size: 20px;
 }
 
+#phone{
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#email{
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#request{
+    width: 400px;
+    height: 250px;
+    font-size: 20px;
+    vertical-align: top;
+}
 
 .right{
-    height: 1134px;
+    width: 600px;
+    height: 1000px;
     margin: 80px;
 }
 
-.camping_name{
-    width: 280px;
-    height: 150px;
+.camping_information{
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+    width: 450px;
+    height: 200px;
     font-weight: bold;
     font-size: 25px;
-    line-height: 150px;
+    margin-bottom: 40px;
 }
 
-.camping_type{
-    width: 280px;
-    height: 150px;
+.camping_info{
+    font-family: Ubuntu;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.camping_name{
+    font-family: Arial;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.camping_mention{
+    font-family: Arial;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.additional_options{
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+    width: 450px;
+    height: 650px;
     font-weight: bold;
     font-size: 25px;
-    line-height: 150px;
+}
 
+.options{
+    font-family: Arial;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.option_list{
+    font-family: Arial;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-left: 40px;
 }
