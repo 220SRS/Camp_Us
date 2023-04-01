@@ -1,0 +1,128 @@
+@media (min-width: 1024px) {
+  .detail {
+    width: 1000px;
+    margin: 112px auto 0 auto;
+  }
+
+  .comment {
+    padding: 1rem 0;
+  }
+
+  .comment-body {
+    background-color: #EEEEEE;
+    padding: 0.7rem 0.4rem;
+  }
+
+  .comment-body-title {
+    padding: 0 0 0.2rem 0;
+  }
+
+  .top {
+    flex-direction: column;
+  }
+
+  .left {
+    float: left;
+    width: 460px;
+  }
+
+  .right {
+    float: right;
+    width: 490px;
+  }
+
+  .info {
+    margin-bottom: 20px;
+  }
+
+  .camping-address {
+      margin: 6px 0 8px 0;
+      font-size: 18px;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 350px;
+    margin: 10px 0;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .line {
+    border-bottom: 0.1em solid #f2f2f2;
+  }
+  .service-tag-title {
+    font-size: 20px;
+  }
+
+  .service-title-box {
+    margin: 0.7rem 0;
+  }
+
+  .tag-box-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -1.6rem;
+    width:100%;
+    position: relative;
+    box-sizing: inherit;
+  }
+
+  .tag-png-box {
+     display: flex;
+     flex-wrap: wrap;
+     overflow: hidden;
+     max-height: 15rem;
+  }
+
+  .single-tag {
+    display: flex;
+    margin-right: 0.8rem;
+    height: 7.5rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 5.2rem;
+    min-width: 5.2rem;
+    text-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+
+  }
+
+  .tag-png {
+        min-width: 2.4rem;
+        height: 3.1rem;
+        object-fit: contain;
+  }
+
+  .tag-name {
+    font-weight: normal;
+        font-size: 1.1rem;
+        margin-top: 0.6rem;
+        color: #616161;
+        width: 100%;
+        text-align: center!important;
+        line-height: 1.4rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -webkit-box-pack: end;
+  }
+
+}
+
+
