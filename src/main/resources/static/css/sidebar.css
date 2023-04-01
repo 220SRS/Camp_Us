@@ -1,5 +1,26 @@
-/* Sub nav */
-.sub_wrap{min-height:390px}
+.sidebar {
+    position: relative;
+}
+
+.sidebar-menu {
+    position: absolute;
+    top: 50px;
+}
+
+.sidebar li {
+    padding: 10px 0;
+}
+.sidebar a {
+    color: rgba(0,0,0,0.56);
+    font-size: 18px;
+    display: inline-block;
+}
+
+.sidebar a.active {color: rgb(255,145,0);}
+
+
+
+/* .sub_wrap{min-height:390px}
 .sub_wrap nav{display:none}
 .sub_wrap nav ul li{margin-bottom:26px}
 .sub_wrap nav ul li a{display:block;font-size:18px;color:rgba(0,0,0,0.56)}
@@ -12,4 +33,3 @@
     .sub_wrap .sub_title{display:none}
     .my_wrap{padding-top:54px;}
     .sub_wrap{width:1024px !important;margin:0 auto 0 auto;padding-bottom:50px} /* Fix GNB 대응 */
-}

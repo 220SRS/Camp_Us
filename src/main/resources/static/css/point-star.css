@@ -1,107 +1,9 @@
-/* ---------------------------- reset ----------------------- */
-@charset "utf-8";
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-
-
 * {
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-body a {
-  color: #fff;
-  text-decoration: none;
-}
-a:hover {color: #bdbdbd; cursor: pointer;}
-
-ul,li,ol {list-style:none;}
-
-img,fieldset {border:0 none;}
-
-button {
-  background: inherit;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  overflow: visible;
-  cursor: pointer;
- }
-
-video,img {width: 100%;}
-
-input:focus {outline:none;}
-select:focus {outline:none;}
-
-
-/* 폰트 초기화 font-family */
-p,div,span,a {
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-h1,h2,h3,h4 {
-  font-family: 'Black Han Sans', sans-serif;
-}
-
-/* clearfix */
-.clearfix::after {
-  display: block;
-  clear: both;
-  content: "";
-  overflow: hidden;
-}
-
-/* ---------------------------- common ----------------------- */
-
-
-.navbar {
-  width: 100%;
-  height: 60px;
-  background-color: rgba(255,135,98,.9);
-}
-.navbar-brand h2 {
-  padding-left: 30px;
-  color: #fff;
-}
-.nav-btns {
-  padding-right: 10px;
-}
-.nav-btns li {
-  padding: 0 20px;
-  float: right;
-  font-weight: 600;
-  color: #fff;
-}
-
-
-footer {
-  width: 100%;
-  height: 100px;
-  background-color: #6d4c41;
-  color: #fff;
-  text-align: center;
-}
-footer .f1 {
-  padding-top: 20px;
-  font-size: 18px;
-  font-weight: 600;
-}
-footer .f1 a {
-  text-decoration: underline;
-}
-footer p {
-  font-size: 12px;
-}
-
-
-
-
-
-/* ---------------------------- point-star ---------------------------- */
 
 :root {
   --bg: #e3e4e8;
@@ -111,16 +13,16 @@ footer p {
   --yellow-t: rgba(244, 168, 37, 0);
   --bezier: cubic-bezier(0.42,0,0.58,1);
   --trans-dur: 0.3s;
+  font-size: calc(24px + (30 - 24) * (100vw - 320px) / (1280 - 320));
 }
 
-#star-body {
+body {
   background-color: var(--bg);
   color: var(--fg);
   font: 1em/1.5 "DM Sans", sans-serif;
   display: flex;
   height: 100vh;
   transition: background-color var(--trans-dur), color var(--trans-dur);
-  font-size: calc(24px + (30 - 24) * (100vw - 320px) / (1280 - 320));
 }
 
 .rating {
@@ -287,4 +189,3 @@ footer p {
     stroke-dashoffset: -12;
   }
 }
-/* -------------------------------------------------------- */

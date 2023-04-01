@@ -1,19 +1,32 @@
-.img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.content {
+    margin-left: 180px;
+    padding-top: 60px;
 }
 
-.star-img {
-    margin:0 5px 0 0;
-    width: 84px;
-    height: 20px;
+.test {
+    display: inline-block;
+}
+
+.content-container {
+    padding: 10px;
+    border-bottom: 2px solid #bdbdbd;
 }
 
 .titleBox {
-    width: 90%;
-    float: right;
+    padding-top: 40px;
 }
+
+.fa-star {
+    color: #f4a825;
+}
+
+.edit-review {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    font-size: 25px;
+}
+.edit-review button {padding: 0 10px 0 0;}
 
 .title-content {
     font-size: 17px
@@ -21,13 +34,7 @@
 
 .subTitle {
     color: #0000008F;
-    margin: 10px 0;
-    float: right;
-    width: 90%
-}
-
-.review-profile {
-    float: left;
+    padding: 5px 0 10px 0;
 }
 
 .review-content {
@@ -36,36 +43,16 @@
 }
 
 .content-box {
-    float: right;
-    width: 90%
+    padding-top: 20px;
 }
 
 .swiper {
-  width: 100%;
-  height: 350px;
-  margin: 10px 0;
+    width: 60%;
+    height: 450px;
+    margin: 10px 0;
 }
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .review-date {
+    float: right;
     color: #0000008F;
-}
-
-#delete-review-btn {
-  background-color: white;
-  float: right;
-  width: 10%;
+    padding-bottom: 20px;
 }
