@@ -1,10 +1,7 @@
 .content {
+    display: block;
     margin-left: 180px;
     padding-top: 60px;
-}
-
-.test {
-    display: inline-block;
 }
 
 .content-container {
@@ -55,4 +52,8 @@
     float: right;
     color: #0000008F;
     padding-bottom: 20px;
+}
+
+.footer-fix {
+    margin-top: 40px;
 }

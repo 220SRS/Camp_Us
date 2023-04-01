@@ -26,10 +26,12 @@
 
 </head>
 <body>
+
+<div id="body-wrap">
+
   <!-- common nav 예시 -->
   <nav include-html="./common/nav.html"></nav>
 
-  
 <div class="sidebar">
   <div class="container">
       <div class="sidebar-menu">
@@ -44,7 +46,7 @@
   
   <div class="container">
     <!-- sidebar : 활성화 되어있는 목록명에 class = "active" 부여-->
-    <div class="content clearfix">
+    <div class="content">
 
       <div data-v-f012d516="">
         <h3 data-v-f012d516="">작성한 리뷰</h3>
@@ -104,10 +106,9 @@
     </div>
   </div>
 
-  <section style="height: 500px;"></section>
-
-  <!-- common footer 예시 -->
-  <footer include-html="./common/footer.html"></footer>
+<!-- common footer 예시 -->
+<div class="footer-fix"><footer include-html="./common/footer.html"></footer></div>
+</div>
 
 </body>
 <!-- Initialize Swiper -->

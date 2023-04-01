@@ -16,7 +16,7 @@
   font-size: calc(24px + (30 - 24) * (100vw - 320px) / (1280 - 320));
 }
 
-body {
+#star-body {
   background-color: var(--bg);
   color: var(--fg);
   font: 1em/1.5 "DM Sans", sans-serif;
