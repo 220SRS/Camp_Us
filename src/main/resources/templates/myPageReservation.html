@@ -24,6 +24,8 @@
 
     <script src="../../resources/static/js/common.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 <body>
 
@@ -37,18 +39,13 @@
         <ul>
             <li><a href="../../resources/templates/mypageInfo.html" class="">내 정보</a></li>
             <li><a class="active" href="../../resources/templates/myPageReservation.html">예약 내역</a></li>
-            <li><a href="../../resources/templates/home.html" class="">리뷰 관리</a></li>
+            <li><a href="../../resources/templates/myPageReview.html" class="">리뷰 관리</a></li>
         </ul>
     </nav>
 
     <div class="align_rt">
         <div class="container align_rt" data-v-f012d516="">
-            <h3 class="page-title pc-only testjs" data-v-f012d516=""></h3>
-            <script>
-                let a = "fkfkfkfkf";
-                document.getElementsByClassName("testjs")[0].innerText = a;
-            </script>
-
+            <h3 class="page-title pc-only" data-v-f012d516="">예약 내역</h3>
             <div class="tools">
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
@@ -76,35 +73,6 @@
         </div>
     </div>
 
-    <!-- TODO : Demuu - 여기 페이지에도 일단 구현해놨어요. 근데 이렇게 하면 첫번째 카드에만 기능이 적용 됩니다...-->
-    <div id="modalBox" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div><h4 class="modal-title" id="myModalLabel">00 캠핑장 </h4></div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBtn"><span
-                            aria-hidden="true">&times;</span></button>
-                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>-->
-                </div>
-                <div class="modal-body">
-                    <div><span>💡💡💡💡💡💡</span></div>
-                    <div class="reviewImg">
-                        <img src="../../resources/static/images/night.jpg" alt="..." class="img-thumbnail rounded">
-                    </div>
-                    <p class="h5">리뷰 작성</p>
-                    <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">확인</button>
-                    <!--<button type="button" class="btn btn-default" id="closeModalBtn">취소</button>-->
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 
 <!-- common footer 예시 -->
@@ -113,8 +81,6 @@
 
 </body>
 <script src="../../resources/static/js/myPageReservation.js"></script>
-
-<!-- TODO : Demmu - modal에 대한 기능이 정의되어있는 js파일입니닷 -->
 <script src="../../resources/static/js/modal.js"></script>
 <script>
     includeHTML(function () {

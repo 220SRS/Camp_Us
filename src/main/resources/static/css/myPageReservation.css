@@ -237,12 +237,56 @@ ul.info_booking li strong {
     overflow: hidden;
     pointer-events: none;
 }
+.flex-container {
+    display: flex;
+    overflow: hidden;
+}
 
+.wrapper {
+    text-align: center;
+    flex-grow: 1;
+}
+.image-box {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+}
 
+.upload-btn {
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+input[type=file] {
+    display: none;
+}
 
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper {
+    width: 100%;
+    height: 350px;
+    margin: 10px 0;
+}
 
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
 
+}
 
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 @media screen and (max-width: 52.375em) {
