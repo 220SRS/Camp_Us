@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../static/css/reservation.css">
     <link rel="stylesheet" href="../static/css/common.css">
     <script src="../../resources/static/js/common.js"></script>
+    <script src="../../resources/static/js/reservation.js"></script>
 
 </head>
 <body>
@@ -47,8 +48,20 @@
         <div class="additional_options">
             <h4 class="options">추가 옵션</h4>
             <div class="option_list">
-                <p>튜브 대여(무료) - 0원</p>
-                <p>*튜브 대여는 무료입니다*</p>
+                <div class="list1">
+                튜브 대여(무료) - 0원
+                <span class="num">
+                    <input type='button'
+                           onclick='count("minus")'
+                           value='-'/>
+                    <span id='result'>0</span>
+                    <input type='button'
+                           onclick='count("plus")'
+                           value='+'/>
+                </span>
+                <br>
+                *튜브 대여는 무료입니다*
+                </div>
             </div>
         </div>
     </div>

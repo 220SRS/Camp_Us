@@ -52,24 +52,28 @@
 }
 
 #name{
+    border: 1px solid black;
     width: 400px;
     height: 50px;
     font-size: 20px;
 }
 
 #phone{
+    border: 1px solid black;
     width: 400px;
     height: 50px;
     font-size: 20px;
 }
 
 #email{
+    border: 1px solid black;
     width: 400px;
     height: 50px;
     font-size: 20px;
 }
 
 #request{
+    border: 1px solid black;
     width: 400px;
     height: 250px;
     font-size: 20px;
@@ -136,4 +140,15 @@
     font-size: 18px;
     margin-top: 40px;
     margin-left: 40px;
+}
+
+.num{
+    margin-left: 100px;
+}
+
+.list1{
+    border: 1px solid black;
+    margin-right: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
