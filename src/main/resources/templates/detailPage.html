@@ -14,8 +14,6 @@
     <!-- common -->
     <link rel="stylesheet" href="../static/css/common.css">
     <link rel="stylesheet" href="../static/css/detailPage.css">
-    <script src="../../resources/static/js/common.js"></script>
-
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -29,9 +27,8 @@
     <!-- common nav 예시 -->
     <nav include-html="./common/nav.html"></nav>
 
-    <div>
-        <div id="detail_content" class="detail">
-            <div class="top">
+    <div class="container">
+        <div id="detail_content" class="clearfix">
                 <div class="left">
                     <div class="info">
                         <h2>포천 베어스 글램핑</h2>
@@ -78,23 +75,26 @@
                     </div>
                 </div>
                 <div class="right">
-                    <!-- Swiper -->
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <img class="swiper-slide" src="../static/images/camping_img1.png" alt="camping-img1">
-                            <img class="swiper-slide" src="../static/images/camping_img2.png" alt="camping-img1">
-                            <img class="swiper-slide" src="../static/images/camping_img3.png" alt="camping-img1">
-                            <img class="swiper-slide" src="../static/images/camping_img4.png" alt="camping-img1">
+                    <div class="detail-img">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <img class="swiper-slide" src="../static/images/camping_img1.png" alt="camping-img1">
+                                <img class="swiper-slide" src="../static/images/camping_img2.png" alt="camping-img1">
+                                <img class="swiper-slide" src="../static/images/camping_img3.png" alt="camping-img1">
+                                <img class="swiper-slide" src="../static/images/camping_img4.png" alt="camping-img1">
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
-    <div>
+
+    <!-- -------------------tab------------------------------ -->
+    <div class="container">
         <div class="tab">
             <ul class="tabnav">
                 <li><a href="#tab01">지역</a></li>
@@ -130,6 +130,7 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="../../resources/static/js/detailPage.js"></script>
+<script src="../../resources/static/js/common.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
