@@ -37,7 +37,20 @@
 }
 
 .info {
-  margin-bottom: 20px;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.info h2 {
+  padding-top: 40px;
+}
+
+.info-img {
+  display: inline-block;
+  float: left;
+  width: 100px;
+  padding-right: 30px;
+  text-align: center;
 }
 
 .camping-address {
@@ -109,7 +122,7 @@
 
 .tag-png {
       min-width: 2.4rem;
-      height: 3.1rem;
+      height: 2.4rem;
       object-fit: contain;
 }
 
@@ -180,3 +193,12 @@
   border:1px solid #ddd; 
   border-top:none;
 }
+
+@media screen and (max-width: 1074px){
+      .map iframe{
+         width: 30px;
+         height: 30px;
+    }
+}
+
+
