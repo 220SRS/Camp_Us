@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../../resources/static/css/reset.css">
     <link rel="stylesheet" href="../../resources/static/css/searchpage.css">
     <script src="../../resources/static/js/common.js"></script>
-    <script src="../../resources/static/js/searchpage.js"></script>
 
 </head>
 <body>
@@ -27,8 +26,9 @@
             <!-- common nav 예시 -->
     <nav include-html="./common/nav.html"></nav>
 
-    <section style="height: 500px;">
-        <div>
+
+    <section>
+        <div id="top_search_page">
             <div>
                 <span class="btn_date">
                    <!-- <span class="date_view">
@@ -40,29 +40,31 @@
                 <span>인원</span>
                 <!--<div class="cnt_people" data-min="2" data-max="10" data-def="2">-->
                 <button type="button" class="disable dn">-</button>
-                <span>2</span>
+                <span id="person_count">2</span>
                 <button type="button" class=" up">+</button>
                 <button type="button" class="btn_srch" style="right: 396px;">
                     <img src="../../resources/static/images/image_srch_button.png" width="30" height="30" alt="검색용 돋보기 이미지">
-                    <!--돋보기 이미지의 크기가 div크기에 영향을 받도록 해야한다. 절대값말고 상대값이어야함-->
-                    <!--버튼 배경색 어떻게 한꺼번에 하얗게..?-->
+
                 </button>
             </div>
-        </div>
-        <div class="tab">
-            <ul class="tabnav">
-                <li><a href="#tab01">지역</a></li>
-                <li><a href="#tab02">캠핑종류</a></li>
-                <li><a href="#tab03">기본옵션</a></li>
-                <li><a href="#tab04">상세옵션</a></li>
-                <li><a href="#tab05"><img src="../../resources/static/images/image_reset.png" width="30" height="30" alt="검색용 돋보기 이미지"></a></li>
-                <!-- 탭5는 내용이 없다. 그냥 검색 버튼 기능만 있어야한다
-                그런데 탭 내용이 빈걸로 넘어가지롱~ 해결해야 한다! -->
-            </ul>
-            <div class="tabcontent">
-                <div id="tab01">
-                    <div class="container text-center">
-                        <div class="col">
+            <div class="search_tab">
+                <ul class="search_tabnav">
+                    <li><a href="#tab01">지역</a></li>
+                    <li><a href="#tab02">캠핑종류</a></li>
+                    <li><a href="#tab03">기본옵션</a></li>
+                    <li><a href="#tab04">상세옵션</a></li>
+                    <li>
+                        <button type="button" class="btn_srch" style="right: 396px;">
+                            <img src="../../resources/static/images/image_reset.png" width="30" height="30" alt="검색용 돋보기 이미지">
+
+                        </button>
+                    </li>
+
+                </ul>
+                <div class="search_tabcontent">
+                    <div id="tab01">
+                        <div class="container text-center">
+                            <div class="col">
                                 <div id="suggestion_block">
                                     <label id="suggestion_area"><span class="txt">타닥타닥 추천!</span></label>
                                     <button type="button" class="btn btn-outline-danger">여기어때?</button>
@@ -116,111 +118,218 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
 
-
-                    </div>
-                </div>
-                <div id="tab02">
-                    <div class="container text-center">
-                        <div class="row row-cols-4">
-                            <div class="camping_type_block">
-                                <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">오토캠핑</span></label>
-                            </div>
-                            <div class="camping_type_block">
-                                <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">글램핑</span></label>
-                            </div>
-                            <div class="camping_type_block">
-                                <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">카라반</span></label>
-                            </div>
-                            <div class="camping_type_block">
-                                <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">기타(펜션)</span></label>
-                            </div>
 
                         </div>
                     </div>
-                </div>
-                <div id="tab03">
-                    <div class="container text-center">
+                    <div id="tab02">
+                        <div class="container text-center">
+                            <div class="row row-cols-4">
+                                <div class="camping_type_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">오토캠핑</span></label>
+                                </div>
+                                <div class="camping_type_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">글램핑</span></label>
+                                </div>
+                                <div class="camping_type_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">카라반</span></label>
+                                </div>
+                                <div class="camping_type_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">기타(펜션)</span></label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab03">
+                        <div class="container text-center">
+                            <div class="row row-cols-3" >
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">샤워실</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">매점</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">와이파이</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">주차장</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">반려동물</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">주차장</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">장비대여</span></label>
+                                </div>
+                                <div class="option_block">
+                                    <input type="checkbox" data-check-type="">
+                                    <label class="at1"><span class="txt">기본장비</span></label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab04">
                         <div class="row row-cols-3" >
                             <div class="option_block">
                                 <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">샤워실</span></label>
+                                <label class="at1"><span class="txt">바닥</span></label>
                             </div>
                             <div class="option_block">
                                 <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">매점</span></label>
+                                <label class="at1"><span class="txt">입지형태(?)</span></label>
                             </div>
                             <div class="option_block">
                                 <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">와이파이</span></label>
+                                <label class="at1"><span class="txt">부가시설</span></label>
                             </div>
                             <div class="option_block">
                                 <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">주차장</span></label>
+                                <label class="at1"><span class="txt">레저</span></label>
                             </div>
                             <div class="option_block">
                                 <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">반려동물</span></label>
+                                <label class="at1"><span class="txt">트레일러</span></label>
                             </div>
                             <div class="option_block">
                                 <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">주차장</span></label>
+                                <label class="at1"><span class="txt">카라반 진입</span></label>
                             </div>
-                            <div class="option_block">
-                                <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">장비대여</span></label>
-                            </div>
-                            <div class="option_block">
-                                <input type="checkbox" data-check-type="">
-                                <label class="at1"><span class="txt">기본장비</span></label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div id="tab04">
-                    <div class="row row-cols-3" >
-                        <div class="option_block">
-                            <input type="checkbox" data-check-type="">
-                            <label class="at1"><span class="txt">바닥</span></label>
-                        </div>
-                        <div class="option_block">
-                            <input type="checkbox" data-check-type="">
-                            <label class="at1"><span class="txt">입지형태(?)</span></label>
-                        </div>
-                        <div class="option_block">
-                            <input type="checkbox" data-check-type="">
-                            <label class="at1"><span class="txt">부가시설</span></label>
-                        </div>
-                        <div class="option_block">
-                            <input type="checkbox" data-check-type="">
-                            <label class="at1"><span class="txt">레저</span></label>
-                        </div>
-                        <div class="option_block">
-                            <input type="checkbox" data-check-type="">
-                            <label class="at1"><span class="txt">트레일러</span></label>
-                        </div>
-                        <div class="option_block">
-                            <input type="checkbox" data-check-type="">
-                            <label class="at1"><span class="txt">카라반 진입</span></label>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="search_list_wrap">
+                <div class="container" data-v-f012d516="">
+                     <div class="search_list_sort_tools">
+                        <div class="row" id="search_tool_block">
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="styled-select-filters">
+                                    <select name="sort_rank" id="sort_rank">
+                                        <option value selected>평점순</option>
+                                        <option value="lower">낮은 평점순</option>
+                                        <option value="higher">높은 평점순</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="styled-select-filters">
+                                    <select name="sort_price" id="sort_price">
+                                        <option value selected>가격순</option>
+                                        <option value="lower">낮은 가격순</option>
+                                        <option value="higher">높은 가격순</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sarch_cards-container">
+                        <!-- 데이터베이스에서 가져오면 여기 텅비던데..?-->
+
+                        <!-- 여기서부터 리스트중 하나의 요소-->
+                        <div class="card" id="search_card-0">
+                            <div class="search_list">
+                                <div class="row">
+
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="photo">
+                                            <img src="../../resources/static/images/camp_list1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5">
+                                        <div>
+                                            <h3 class="camp_name">캠핑장1</h3>
+                                        </div>
+                                        <div>
+                                            <span>서울시 강남구</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div>
+                                            <span>
+                                                8.9
+                                            </span>
+                                            <span>
+                                                (787)
+                                            </span>
+                                        </div>
+                                        <div>
+                                            230,000원
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" id="search_card-1">
+                            <div class="search_list">
+                                <div class="row">
+                                    <!-- 여기가 리스트중 하나의 요소-->
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="photo">
+                                            <img src="../../resources/static/images/camp_list2.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5">
+                                        <div>
+                                            <h3 class="camp_name">캠핑장2</h3>
+                                        </div>
+                                        <div>
+                                            <span>서울시 도봉구</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div>
+                                            <span>
+                                                8.1
+                                            </span>
+                                            <span>
+                                                (433)
+                                            </span>
+                                        </div>
+                                        <div>
+                                            190,000원
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+
     </section>
 
     <!-- common footer 예시 -->
     <footer include-html="./common/footer.html"></footer>
 
     </div>
-
 </body>
+
+
+<script src="../../resources/static/js/searchpage.js"></script>
 
 <script>
     includeHTML( function () {
