@@ -1,49 +1,145 @@
 /* Main */
-.main_spot{height:50vw;background:#fff url('../images/main_img.jpg') 50% 100% no-repeat;background-size:cover;text-indent:-9999px;}
-.main_spot a {height:30vw; display: block;}
-.recommend{padding:23px 16px 0 16px}
-.recommend li{position:relative;border-bottom:1px solid rgba(0,0,0,0.08);padding-left:108px;}
-.recommend li a{display:block;height:112px;font-size:13px;line-height:22px;color:rgba(0,0,0,0.56)}
-.recommend li img{position:absolute;top:8px;left:0;width:96px;height:96px}
-.recommend li strong{display:block;padding:22px 0 8px 0;font-size:16px;line-height:1;font-weight:normal;color:rgb(0,121,107)}
-.main_link{overflow:hidden;padding:16px 0;background:rgb(250,250,250)}
-.main_link li{float:left;width:33.3333%}
-.main_link li a{display:block;overflow:hidden;height:79px;font-size:12px;color:rgba(0,0,0,0.87);text-align:center; cursor: pointer;}
-.main_link li a span{display:inline-block;width:48px;height:48px;margin:0 auto;}
-.main_link li a p{height:20px;padding-top:7px;}
-.main_link .ico_01{background:url('../images/caravan.png') no-repeat; background-size:48px auto}
-.main_link .ico_02{background:url('../images/caravan.png') no-repeat; background-size:48px auto}
-.main_link .ico_03{background:url('../images/caravan.png') no-repeat; background-size:48px auto}
-.main_link .ico_04{background:url('../images/caravan.png') no-repeat; background-size:48px auto}
+.main_spot {
+    height: 450px;
+    background: #fff url('../images/main_img.jpg') 50% 100% no-repeat;
+    background-size: 924px auto;
+}
+
+.main_spot a {
+    height: 450px;
+}
+
+.main_link {
+    padding: 32px 0 29px 41px;
+    background: rgb(253, 253, 253)
+}
+
+.main_link ul {
+    overflow: hidden;
+    width: 1024px;
+    margin: 0 auto
+}
+
+.main_link li {
+    float: left;
+    width: 25%
+}
+
+.main_link li a {
+    display: block;
+    height: 107px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.56);
+    text-align: center
+}
+
+.main_link li a span {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+}
+
+.main_link li a p {
+    height: auto;
+    padding-top: 14px;
+}
+
+.main_link .ico_01 {
+    background: url('../images/caravan.png') no-repeat;
+    background-size: 72px auto
+}
+
+.main_link .ico_02 {
+    background: url('../images/caravan.png') no-repeat;
+    background-size: 72px auto
+}
+
+.main_link .ico_03 {
+    background: url('../images/caravan.png') no-repeat;
+    background-size: 72px auto
+}
+
+.main_link .ico_04 {
+    background: url('../images/caravan.png') no-repeat;
+    background-size: 72px auto
+}
+
+.recommend {
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 78px;
+}
+
+.recommend h2 {
+    padding-left: 30px;
+    margin-bottom: 20px;    
+}
+
+.recommend li {
+    overflow: hidden;
+    position: relative;
+    width: 49%;
+    height: 162px;
+    margin-bottom: 50px;
+    padding: 0 24px 0 186px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box
+}
+
+.recommend li:last-child {
+    display: block;
+}
+
+.recommend li:nth-child(even) {
+    margin-left: 16px
+}
+
+.recommend li a {
+    display: block;
+    height: 162px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.56);
+    box-sizing: border-box
+}
+
+.recommend li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 162px;
+    height: 162px
+}
+
+.recommend li strong {
+    display: block;
+    padding: 38px 0 14px 0;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: normal;
+    color: rgb(0, 121, 107)
+}
+
+.recommend li .img_ready {
+    border-right: 1px solid rgba(0, 0, 0, 0.08)
+}
+
+
+
 
 
 /* Media Query 768 */
-@media all and (min-width:768px){
-    .main_spot{height:50vw;background:#fff url('../images/main_img.jpg') 50% 100% no-repeat;background-size:100% 100%;}
-    .main_spot a {height:50vw;}
+@media all and (max-width:768px) {
+    .main_spot {
+        height: 50vw;
+        background: #fff url('../images/main_img.jpg') 50% 100% no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .main_spot a {
+        height: 50vw;
+    }
 }
 
-@media all and (min-width:1024px){
-    .main_spot{height:450px;background:#fff url('../images/main_img.jpg') 50% 100% no-repeat;background-size:924px auto;}
-    .main_spot a {height:450px;}
-    .main_link{padding:32px 0 29px 41px;background:rgb(253,253,253)}
-    .main_link ul{overflow:hidden;width:1024px;margin:0 auto}
-    .main_link li{float:left;width:25%}
-    .main_link li a{display:block;height:107px;font-size:18px;color:rgba(0,0,0,0.56);text-align:center}
-    .main_link li a span{display:inline-block;width:72px;height:72px;margin:0 auto;}
-    .main_link li a p{height:auto;padding-top:14px;}
-    .main_link .ico_01{background:url('../images/caravan.png') no-repeat; background-size:72px auto}
-    .main_link .ico_02{background:url('../images/caravan.png') no-repeat; background-size:72px auto}
-    .main_link .ico_03{background:url('../images/caravan.png') no-repeat; background-size:72px auto}
-    .main_link .ico_04{background:url('../images/caravan.png') no-repeat; background-size:72px auto}
-
-    .recommend{width:1024px;margin:0 auto;overflow:hidden;padding:78px 31px 0 31px}
-    .recommend li{overflow:hidden;float:left;position:relative;width:473px;height:162px;margin:0 0 16px 0;padding:0 24px 0 186px;border:1px solid rgba(0,0,0,0.08);box-sizing:border-box}
-    .recommend li:last-child{display:block;}
-    .recommend li:nth-child(even){margin-left:16px}
-    .recommend li a{display:block;height:162px;font-size:17px;line-height:1.6;color:rgba(0,0,0,0.56);box-sizing:border-box}
-    .recommend li img{position:absolute;top:0;left:0;width:162px;height:162px}
-    .recommend li strong{display:block;padding:38px 0 14px 0;font-size:20px;line-height:1;font-weight:normal;color:rgb(0,121,107)}
-    .recommend li .img_ready{border-right:1px solid rgba(0,0,0,0.08)}
-} /* Media query Close */
-
+/* Media query Close */
