@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../static/css/detailPage.css">
     <script src="../../resources/static/js/common.js"></script>
 
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
@@ -27,72 +28,97 @@
 
     <!-- common nav 예시 -->
     <nav include-html="./common/nav.html"></nav>
-    <div id="content" class="detail">
-        <div class="top">
 
-            <div class="left">
-                <div class="info">
-                    <h2>포천 베어스 글램핑</h2>
-                    <p class="camping-address">경기 포천시 내촌면 신팔리 388-2</p>
-                </div>
-                <div class="comment">
-                    <div class="comment-body">
-                        <strong class="comment-body-title">사장님 한마디</strong>
-                        <div>
+    <div>
+        <div id="detail_content" class="detail">
+            <div class="top">
+                <div class="left">
+                    <div class="info">
+                        <h2>포천 베어스 글램핑</h2>
+                        <p class="camping-address">경기 포천시 내촌면 신팔리 388-2</p>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-body">
+                            <strong class="comment-body-title">사장님 한마디</strong>
+                            <div>
                             <span>
                                 계곡 인근 자연 속에서 캠핑을 즐기실 수 있는 힐링 캠핑장입니다 개별 바비큐장이 갖춰져 있어서 편안하게 바비큐를 이용할 수 있습니다
                             </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="line"></div>
-                <div class="camping-service-tag">
-                    <div class="service-title-box">
-                        <b class="service-tag-title">인기시설 및 서비스</b>
+                    <div class="line"></div>
+                    <div class="camping-service-tag">
+                        <div class="service-title-box">
+                            <b class="service-tag-title">인기시설 및 서비스</b>
+                        </div>
+                        <section class="tag-box-section">
+                            <ul class="tag-png-box">
+                                <div class="single-tag">
+                                    <img class="tag-png" src="../static/images/basket.png" alt="마트">
+                                    <div class="tag-name">편의점</div>
+                                </div>
+
+                                <div class="single-tag">
+                                    <img class="tag-png" src="../static/images/parking-area.png" alt="주차">
+                                    <div class="tag-name">주차가능</div>
+                                </div>
+
+                                <div class="single-tag">
+                                    <img class="tag-png" src="../static/images/kitchen-utensils.png" alt="주방">
+                                    <div class="tag-name">공용주방</div>
+                                </div>
+
+                                <div class="single-tag">
+                                    <img class="tag-png" src="../static/images/badminton.png" alt="배드민턴">
+                                    <div class="tag-name">배드민턴장</div>
+                                </div>
+                            </ul>
+                        </section>
                     </div>
-                    <section class="tag-box-section">
-                        <ul class="tag-png-box">
-                            <div class="single-tag">
-                                <img class="tag-png" src="../static/images/basket.png" alt="마트">
-                                <div class="tag-name">편의점</div>
-                            </div>
-
-                            <div class="single-tag">
-                                <img class="tag-png" src="../static/images/parking-area.png" alt="주차">
-                                <div class="tag-name">주차가능</div>
-                            </div>
-
-                            <div class="single-tag">
-                                <img class="tag-png" src="../static/images/kitchen-utensils.png" alt="주방">
-                                <div class="tag-name">공용주방</div>
-                            </div>
-
-                            <div class="single-tag">
-                                <img class="tag-png" src="../static/images/badminton.png" alt="배드민턴">
-                                <div class="tag-name">배드민턴장</div>
-                            </div>
-                        </ul>
-                    </section>
+                </div>
+                <div class="right">
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <img class="swiper-slide" src="../static/images/camping_img1.png" alt="camping-img1">
+                            <img class="swiper-slide" src="../static/images/camping_img2.png" alt="camping-img1">
+                            <img class="swiper-slide" src="../static/images/camping_img3.png" alt="camping-img1">
+                            <img class="swiper-slide" src="../static/images/camping_img4.png" alt="camping-img1">
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
-
-            <div class="right">
-                <!-- Swiper -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <img class="swiper-slide" src="../static/images/camping_img1.png" alt="camping-img1">
-                        <img class="swiper-slide" src="../static/images/camping_img2.png" alt="camping-img1">
-                        <img class="swiper-slide" src="../static/images/camping_img3.png" alt="camping-img1">
-                        <img class="swiper-slide" src="../static/images/camping_img4.png" alt="camping-img1">
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-
         </div>
     </div>
+    <div>
+        <div class="tab">
+            <ul class="tabnav">
+                <li><a href="#tab01">지역</a></li>
+                <li><a href="#tab02">캠핑종류</a></li>
+                <li><a href="#tab03">기본옵션</a></li>
+                <li><a href="#tab04">상세옵션</a></li>
+            </ul>
+            <div class="tabcontent">
+                <div id="tab01">
+                    aa
+                </div>
+                <div id="tab02">
+                    bb
+                </div>
+                <div id="tab03">
+                    cc
+                </div>
+                <div id="tab04">
+                    dd
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- common footer 예시 -->
     <footer include-html="./common/footer.html"></footer>
@@ -103,6 +129,7 @@
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="../../resources/static/js/detailPage.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -118,14 +145,14 @@
       mousewheel: true,
       keyboard: true,
     });
-</script>
 
-<script>
     includeHTML( function () {
         includeRouter( function () {
             // do something in the future
         });
     });
+
+
 </script>
 
 </html>
