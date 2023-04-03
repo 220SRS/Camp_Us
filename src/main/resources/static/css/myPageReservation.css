@@ -1,3 +1,41 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 #content {
     width: 50%;
     margin: 60px auto;
@@ -86,20 +124,8 @@
     line-height: 50px;
 }
 
-/*.strip_booking h3.hotel_booking:before {
-    content: "\26";
-}
-*/
-.card {
-    margin-bottom: 15px;
-}
-
-#cards-container {
-    margin-top: 15px;
-}
-
-.photo {
-    /* photo size 수정*/
+.booking_buttons {
+    padding: 35px 0 0 20px;
 }
 
 a.btn_2, .btn_2, a.btn_3, .btn_3 {
@@ -129,7 +155,6 @@ a.btn_3, .btn_3 {
     text-align: center;
     margin-top: 3px;
 }
-
 a.btn_2:hover, .btn_2:hover, a.btn_3:hover, .btn_3:hover {
     background: #333;
     color: #fff;
@@ -154,165 +179,4 @@ ul.info_booking li strong {
     margin-bottom: 3px;
     display: block;
     color: #555;
-}
-
-.booking_buttons {
-    margin-top: 20px;
-}
-.modal-backdrop {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: #000;
-}
-.modal-backdrop.fade {
-    filter: alpha(opacity=0);
-    opacity: 0;
-}
-.modal-backdrop.in {
-    filter: alpha(opacity=50);
-    opacity: .5;
-}
-.modal-dialog {
-    position: relative;
-    width: auto;
-    margin: 10px;
-}
-.modal.fade .modal-dialog {
-    -webkit-transition: -webkit-transform .3s ease-out;
-    -o-transition:      -o-transform .3s ease-out;
-    transition:         transform .3s ease-out;
-    -webkit-transform: translate(0, -25%);
-    -ms-transform: translate(0, -25%);
-    -o-transform: translate(0, -25%);
-    transform: translate(0, -25%);
-}
-.modal.in .modal-dialog {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0);
-}
-.modal-header {
-    /*min-height: 16.42857143px;*/
-    padding: 20px;
-    border-bottom: 30px solid #e5e5e5;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-.modal-header .close {
-    margin-top: -2px;
-}
-
-.modal-content {
-    position: relative;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #999;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 6px;
-    outline: 0;
-    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
-    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
-}
-
-/* 별점 부여 style */
-.star {
-    position: relative;
-    font-size: 2rem;
-    color: #ddd;
-}
-
-.star input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.star > span {
-    width: 0;
-    position: absolute;
-    left: 0;
-    color: red;
-    overflow: hidden;
-    pointer-events: none;
-}
-.flex-container {
-    display: flex;
-    overflow: hidden;
-}
-
-.wrapper {
-    text-align: center;
-    flex-grow: 1;
-}
-.image-box {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    margin: 20px auto;
-}
-
-.upload-btn {
-    border: 1px solid #ddd;
-    padding: 6px 12px;
-    display: inline-block;
-    cursor: pointer;
-}
-input[type=file] {
-    display: none;
-}
-
-.swiper-container {
-    width: 100%;
-    height: 100%;
-}
-.swiper {
-    width: 100%;
-    height: 350px;
-    margin: 10px 0;
-}
-
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-@media screen and (max-width: 52.375em) {
-    ul.info_booking {
-        padding: 30px 0 15px 0;
-        border-right: none;
-        text-align: left;
-    }
-
-    .booking_buttons {
-        margin-top: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .modal-content {
-        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    }
-    .modal-dialog {
-        width: 600px;
-        margin: 30px auto;
-    }
 }
