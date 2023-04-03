@@ -86,7 +86,7 @@
     width: 107%;
     padding: 7px 5px 5px 10px;
     border: 0;
-    border-radius: 0;
+    border-radius: 10px;
     height: 31px;
     margin: 0;
     font-weight: 400;
@@ -111,12 +111,16 @@
 
 #search_list_sort_tools {
     background: #eee;
-    padding: 10px;
+    padding: 0px;
     margin-bottom: 10px;
 }
 
 #search_tool_block{
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: rgba(255,135,98,.9);
 }
 
 /* 항목 전체 가운데 정렬
@@ -129,4 +133,59 @@
 /* 검색 리스트 상단 패딩 작업 */
 .search_list_wrap{
     padding-top: 20px;
+}
+
+.btn_date{
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    height: 40px;
+    margin: 13px 0 12px 0;
+    padding: 0 0 0 10px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    background: rgba(255,135,98,.1) url(//image.goodchoice.kr/images/web_v3/ico_arr_down.png) right 8px bottom 50% no-repeat;
+    background-size: 24px auto;
+    font-size: 18px;
+    line-height: 40px;
+    color: rgba(0,0,0,0.56);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.input_date{
+    background-color: transparent;
+}
+
+#text_date{
+    padding: 0 10px 0 10px;
+}
+
+
+#text_person, #person > span{
+    padding: 0 10px 0 10px;
+}
+
+#person, #date{
+    padding: 0 5px 0 5px;
+}
+
+
+#person button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 반지름을 50%로 설정하여 원형으로 만듦 */
+    background-color: rgba(255,135,98,.1); /* 배경색 지정 */
+    border: none; /* 테두리 없앰 */
+}
+
+#person button:hover {
+    background-color: rgba(255,135,98,.7); /* 마우스 오버시 배경색 변경 */
+}
+
+#form_search{
+    display: inline-block;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 1px;
 }

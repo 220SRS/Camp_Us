@@ -30,22 +30,33 @@
     <section>
         <div id="top_search_page">
             <div>
-                <span class="btn_date">
+                <span id="date">
                    <!-- <span class="date_view">
                         <b>3.29 ~ 3.30</b>
                         <em>&nbsp;·&nbsp;1박</em>
                     </span>-->
-                    날짜 <input type="date">
+                    <span id="text_date">날짜</span>
+                    <div class="btn_date">
+                        <input class="input_date" type="date">
+                    </div>
                 </span>
-                <span>인원</span>
-                <!--<div class="cnt_people" data-min="2" data-max="10" data-def="2">-->
-                <button type="button" class="disable dn">-</button>
-                <span id="person_count">2</span>
-                <button type="button" class=" up">+</button>
-                <button type="button" class="btn_srch" style="right: 396px;">
-                    <img src="../../resources/static/images/image_srch_button.png" width="30" height="30" alt="검색용 돋보기 이미지">
+                <span id="person">
+                    <span id="text_person">인원</span>
+                    <!--<div class="cnt_people" data-min="2" data-max="10" data-def="2">-->
+                    <button type="button" class="disable dn">-</button>
+                    <span id="person_count">2</span>
+                    <button type="button" class=" up">+</button>
 
-                </button>
+                </span>
+                <span id="search">
+                    <form action="/search" id="form_search">
+                        <input type="text" placeholder="검색어를 입력하세요">
+                        <button type="button" id="btn_srch" style="right: 396px;">
+                            <img src="../../resources/static/images/image_srch_button.png" width="30" height="30" alt="검색용 돋보기 이미지">
+                        </button>
+                    </form>
+                </span>
+
             </div>
             <div class="search_tab">
                 <ul class="search_tabnav">
