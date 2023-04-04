@@ -84,6 +84,7 @@
     width: 600px;
     height: 1000px;
     margin: 80px;
+    padding-left: 40px;
 }
 
 .camping_information{
@@ -91,13 +92,13 @@
     text-align: left;
     vertical-align: top;
     width: 450px;
-    height: 200px;
+    height: 450px;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 40px;
 }
 
-.camping_info{
+.reserve_info{
     font-family: Ubuntu;
     font-weight: bold;
     margin-top: 20px;
@@ -106,14 +107,35 @@
 
 .camping_name{
     font-family: Arial;
-    font-size: 18px;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.reserve_period{
+    font-family: Arial;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.number_guests{
+    font-family: Arial;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.reserve_amount{
+    font-family: Arial;
+    font-size: 20px;
     margin-top: 40px;
     margin-left: 40px;
 }
 
 .camping_mention{
     font-family: Arial;
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 20px;
     margin-left: 40px;
 }
@@ -123,7 +145,7 @@
     text-align: left;
     vertical-align: top;
     width: 450px;
-    height: 650px;
+    height: 410px;
     font-weight: bold;
     font-size: 25px;
 }
@@ -151,4 +173,25 @@
     margin-right: 50px;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+#do_reserve{
+    border: 1px solid black;
+    margin-left: 144px;
+    margin-top: 30px;
+    padding: 14px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.additional_amount{
+    font-family: Arial;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+#add_amount{
+    text-align: right;
+    margin-right: 20px;
 }
