@@ -11,3 +11,11 @@ docker-compose -f docker-compose-local.yml up
 ```
 docker ps
 ```
+
+## 공공데이터 api 적용
+- 최초 1회 실행
+### 1. 데이터 로드
+- request 보내기
+```
+GET localhost:8080/api/load-data
+```
