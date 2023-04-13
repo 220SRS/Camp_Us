@@ -94,47 +94,37 @@ function showReservationData(reservationData) {
 
 // modal 생성하는 함수
 function openModal() {
-    var modalHtml = `<div id="modalBox" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div><h4 class="modal-title" id="myModalLabel">00 캠핑장 </h4></div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBtn"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <!-- TODO : Demuu - 별점 기능 추가해야함 -->
-                    <div><span>💡💡💡💡💡💡</span></div>
-
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="max-width: 100%;"/>
-                            </div>
-                        </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-pagination"></div>  
-                    </div>
-
-                    <label for="file" class="upload-btn">
-                        <input id="file" type="file" accept="image/*" multiple style="width:300px"/>
-                        <span>Upload Image</span>
-                    </label>
-                  
-                    <p class="h5">리뷰 작성</p>
-                    <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">확인</button>
-                    <!--<button type="button" class="btn btn-default" id="closeModalBtn">취소</button>-->
-                </div>
+    var modalHtml = `
+<div class="modalBox">
+  <div class="card clearfix">
+    <h2 class="madal-title">XX 캠핑장</h2>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="max-width: 100%;"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="max-width: 100%;"/>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="max-width: 100%;"/>
             </div>
         </div>
-    </div>`;
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    <div class="card-body">
+      <h5 class="card-title">리뷰 작성</h5>
+      <div class="form-textarea">
+        <textarea name="" id="" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="closeModal">
+      <button type="button" class="btn btn-primary closeModalBtn" style="float: right;">확인</button>
+    </div>
+  </div>
+</div>
+    `;
 
     var container = document.getElementById("cards-container");
     container.insertAdjacentHTML('beforeend', modalHtml);
