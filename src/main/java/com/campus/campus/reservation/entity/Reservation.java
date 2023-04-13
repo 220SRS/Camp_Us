@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity(name = "RESERVATIONS")
+@Entity(name = "RESERVATION")
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class Reservation {
 
 //    private Campsite campId; // 캠핑장정보 가져오기
 
-//    private Member member; // user정보 가져오기
+//    private Users users; // user정보 가져오기
 
     private String startDate; // 예약 시작일
 

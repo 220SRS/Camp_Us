@@ -11,10 +11,23 @@ public class ReservationService {
     private final CampService campService;
     private final ReservationRepository reservationRepository;
 
-    //생성자 주입
+    public ReservationService(MemberService memberService,
+                              CampService campService,
+                              ReservationRepository reservationRepository) {
+        this.memberService = memberService;
+        this.campService = campService;
+        this.reservationRepository = reservationRepository;
+    }
 
     public Reservation saveReservation(Reservation reservation) {
-        return savedReservation;
+        Reservation reservation1 = new Reservation();
+        reservation1.setStartDate("2023-04-13");
+        reservation1.setEndDate("2023-04-14");
+        reservation1.setPaymentAmount(100000L);
+        reservation1.setPaymentStatus(1L);
+        reservationRepository.save(reservation1);
+
+        return reservation1;
     }
 
     public Reservation updateReservation(Reservation reservation) {
@@ -22,7 +35,7 @@ public class ReservationService {
     }
 
     public Reservation findByReservation() {
-
+        Reservation savedReservation = reservationRepository.findById()
     }
 
     public Page<Reservation> findByReservations() {
