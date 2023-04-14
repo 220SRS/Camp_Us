@@ -28,7 +28,7 @@ public class CampDataServiceImpl implements CampDataService {
     public LoadDataResponseDto loadAndSaveFromApiWithJson() {
         try {
             int page = 1;
-            int numOfRows = 10;
+            int numOfRows = 100;
             String apiUrl = "https://apis.data.go.kr/B551011/GoCamping/basedList?MobileOS=WIN&MobileApp=TadakTadak&_type=json";
             String apikey = "eqzJCAvqSy0VmYJ77GE51mGpqo4PFub0OrAs%2Fhw1S0COTrvYFwPULfG4K%2Bixr0uYch4uw3ciXr4PhRI%2F%2FdDQ%2FQ%3D%3D";
 
@@ -73,8 +73,8 @@ public class CampDataServiceImpl implements CampDataService {
                     String doNm = (String) object.get("doNm");
                     String sigunguNm = (String) object.get("sigunguNm");
                     String zipcode = (String) object.get("zipcode");
-                    Long latitude = Long.parseLong(object.get("mapX").toString());
-                    Long longitude = Long.parseLong(object.get("mapY").toString());
+                    Double latitude = Double.parseDouble(object.get("mapX").toString());
+                    Double longitude = Double.parseDouble(object.get("mapY").toString());
                     String direction_info = (String) object.get("direction");
                     String basic_facility = (String) object.get("sbrsCl");
                     String surroundings = (String) object.get("lctCl");

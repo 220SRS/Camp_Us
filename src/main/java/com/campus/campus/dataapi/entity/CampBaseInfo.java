@@ -22,10 +22,10 @@ public class CampBaseInfo {
     private String biz_num;        // 사업자 번호 (bizrno)
     @Column
     private String main_img;        // 대표이미지 (firstImageUrl)
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String simple_info;        // 한줄 설명 (lineIntro)
 
-    @Column(length = 10000)
+    @Column(columnDefinition = "TEXT")
     private String detail_info;        // 여러줄 설명 (intro)
     @Column
     private String store_phone;        // 번호 (tel)
@@ -42,10 +42,10 @@ public class CampBaseInfo {
     @Column
     private String zipcode;        // 우편번호 (zipcode)
     @Column
-    private Long latitude;        // 경도 (mapX)
+    private Double latitude;        // 경도 (mapX)
     @Column
-    private Long longitude;        // 위도 (mapY)
-    @Column
+    private Double longitude;        // 위도 (mapY)
+    @Column(columnDefinition = "TEXT")
     private String direction_info;        // 오시는 길 (direction)
     @Column
     private String basic_facility;        // 기본 시설 (sbrsCl)
@@ -69,7 +69,7 @@ public class CampBaseInfo {
     private Integer wtrpl_cnt;        // 개수대 개수 (wtrplCo)
     @Column
     private String animal_yn;        // 애완동물출입 (animalCmgCl)
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String camp_feature;        // 특징 (featureNm)
     @Column
     private Integer siteBottomCl1;        // 잔디 (단위:면) (siteBottomCl1)
