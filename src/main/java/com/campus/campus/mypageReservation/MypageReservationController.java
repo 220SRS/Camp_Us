@@ -30,17 +30,18 @@ public class MypageReservationController {
 
         for (Reservation reservation:reservations){
             ReservationResponseDto reservationResponseDto = new ReservationResponseDto();
-            reservationResponseDto.setRsv_id(reservation.getRsv_id());
-            reservationResponseDto.setStore_id(reservation.getStore_id());
-            reservationResponseDto.setStart_date(reservation.getStart_date());
-            reservationResponseDto.setEnd_date(reservation.getEnd_date());
-            reservationResponseDto.setPayment_amt(reservation.getPayment_amt());
-            reservationResponseDto.setRsv_status(reservation.getRsv_status());
+            reservationResponseDto.setRsvId(reservation.getRsvId());
+            reservationResponseDto.setStoreId(reservation.getStoreId());
+            reservationResponseDto.setStartDate(reservation.getStartDate());
+            reservationResponseDto.setEndDate(reservation.getEndDate());
+            reservationResponseDto.setPaymentAmt(reservation.getPaymentAmt());
+            reservationResponseDto.setRsvStatus(reservation.getRsvStatus());
             reservationResponseDtos.add(reservationResponseDto);
         }
         ReservationListResponseDto responseDto = new ReservationListResponseDto();
         responseDto.setReservationResponseDtos(reservationResponseDtos);
 
+        System.out.println(responseDto);
         return ResponseEntity.ok(responseDto);
     }
 

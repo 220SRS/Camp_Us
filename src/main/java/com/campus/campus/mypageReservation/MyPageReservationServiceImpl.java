@@ -26,7 +26,7 @@ public class MyPageReservationServiceImpl implements MyPageReservationService{
 
         List<Reservation> reservations
                 = reservationRepository
-                .findByUser_idAndRsv_statusAndRsv_dateBetween(user_id, rsvStatus, sDate, currentDate);
+                .findByUserIdAndRsvStatusAndRsvDateBetween(user_id, rsvStatus, sDate, currentDate);
 
         return reservations;
     }

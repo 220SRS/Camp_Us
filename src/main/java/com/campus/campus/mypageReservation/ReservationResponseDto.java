@@ -10,11 +10,11 @@ import java.util.Date;
 @Setter
 public class ReservationResponseDto {
     // 예약 내역 카드 1개의 정보
-    private Long rsv_id; // 예약번호
-    private Long store_id;  // 캠핑장 id
-    private Date start_date;  // 시작 날짜
-    private Date end_date; // 마지막 날짜
-    private Long payment_amt; // 결제 금액
-    private Reservation.RsvStatus rsv_status; // 결제 상태
+    private Long rsvId; // 예약번호
+    private Long storeId;  // 캠핑장 id
+    private Date startDate;  // 시작 날짜
+    private Date endDate; // 마지막 날짜
+    private Long paymentAmt; // 결제 금액
+    private Reservation.RsvStatus rsvStatus; // 결제 상태
 
 }
