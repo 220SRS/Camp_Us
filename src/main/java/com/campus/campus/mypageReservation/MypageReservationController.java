@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mypage/reservation")
+@RequestMapping("/mypage")
 public class MypageReservationController {
     private final MyPageReservationServiceImpl myPageReservationService;
 
@@ -21,14 +21,18 @@ public class MypageReservationController {
         this.myPageReservationService = myPageReservationService;
     }
 
-    @GetMapping
-    public ResponseEntity<ReservationListResponseDto> findAllReservationByUserId(
-            @RequestParam("user_id") Long user_id){
+
+    @GetMapping("/reservation")
+    public ResponseEntity<ReservationListResponseDto> findFilterReservationByUserId(
+            @RequestParam("user_id") Long user_id,
+            @RequestParam(value = "status", defaultValue = "이용중") String status,
+            @RequestParam(value = "period", defaultValue = "6개월") String period
+    ) {
         // 예약 내역 조회
-        List<Reservation> reservations = myPageReservationService.findAllReservationByUserId(user_id);
+        List<Reservation> reservations = myPageReservationService.findFilterReservationByUserId(user_id, status, period);
         List<ReservationResponseDto> reservationResponseDtos = new ArrayList<>();
 
-        for (Reservation reservation:reservations){
+        for (Reservation reservation : reservations) {
             ReservationResponseDto reservationResponseDto = new ReservationResponseDto();
             reservationResponseDto.setRsvId(reservation.getRsvId());
             reservationResponseDto.setStoreId(reservation.getStoreId());
@@ -44,6 +48,4 @@ public class MypageReservationController {
         System.out.println(responseDto);
         return ResponseEntity.ok(responseDto);
     }
-
-
 }

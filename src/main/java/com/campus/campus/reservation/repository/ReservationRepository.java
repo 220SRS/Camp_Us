@@ -5,9 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Date;
 import java.util.List;
+
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 
+    List<Reservation> findByUserIdAndRsvStatusIn(long user_id, List<Reservation.RsvStatus> rsvStatusList);
 
-    List<Reservation> findByUserIdAndRsvStatusAndRsvDateBetween(Long userId, Reservation.RsvStatus rsvStatus, Date startDate, Date endDate);
+    List<Reservation> findByUserIdAndRsvStatusInAndRsvDateBetween(long user_id, List<Reservation.RsvStatus> rsvStatusList, Date startDate, Date endDate);
 
 }
