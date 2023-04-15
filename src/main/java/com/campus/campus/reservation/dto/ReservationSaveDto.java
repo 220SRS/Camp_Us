@@ -1,37 +1,24 @@
 package com.campus.campus.reservation.dto;
 
+import com.campus.campus.reservation.entity.Reservation;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
-import java.util.List;
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
 public class ReservationSaveDto {
-    @NotNull
-    private Long campId;
+    private Long rsvId; // 예약 id
+    private Long userId;    // user id
+    private Long storeId;   // 캠핑장 id
+    private Integer mbCnt;  // 인원 수
+    private LocalDateTime startDate;  // 시작 날짜
+    private LocalDateTime endDate; // 마지막 날짜
+    private Long paymentAmt; // 결제 금액
+    private String userRequest; // 요청 사항
+    private Reservation.RsvStatus rsvStatus; // 결제 상태
+    private LocalDateTime rsvDate;  // 예약한 날짜
 
-    @NotNull
-    private String startDate;
-
-    @NotNull
-    private String endDate;
-
-    @NotNull
-    private Long paymentAmount;
-
-    @NotNull
-    private Long paymentStatus;
-
-    // 예약자 정보
-    @NotNull
-    private String name;
-
-    @NotNull
-    private String phoneNumber;
-
-    // 추가옵션 정보
-    private List<Long> optionIds;
 }
