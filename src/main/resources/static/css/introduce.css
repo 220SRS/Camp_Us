@@ -54,11 +54,13 @@ section {
 
 .item-title {
     text-align: left;
-    font-size: 18px;
     color: #fff;
     padding-top: 30px;
     padding-left: 25px;
 }
+
+.it-1{font-size: 17px; font-weight: 600; }
+.it-2{color: #29b6f6;}
 
 .item-content {
     display: inline-block;
