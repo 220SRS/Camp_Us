@@ -1,21 +1,23 @@
 package com.campus.campus.reservation.service;
 
-import com.campus.campus.member.MemberService;
+import com.campus.campus.mypageReservation.ReservationResponseDto;
+import com.campus.campus.reservation.dto.ReservationSaveDto;
 import com.campus.campus.reservation.entity.Reservation;
 import com.campus.campus.reservation.repository.ReservationRepository;
-import org.springframework.data.domain.Page;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ReservationService {
-    private final MemberService memberService;
-//    private final CampService campService; 캠프서비스 가져와야함
     private final ReservationRepository reservationRepository;
 
-    public ReservationService(MemberService memberService,
-                              ReservationRepository reservationRepository) {
-        this.memberService = memberService;
-        this.reservationRepository = reservationRepository;
+
+    // TODO : 예진 (saveReservation)
+    public ReservationResponseDto postReservation(ReservationSaveDto reservationSaveDto) {
+        Reservation reservation = Reservation.of(reservationSaveDto);
+        reservationRepository.save(reservation);
+        return ReservationResponseDto.of(reservation);
     }
 
     public Reservation saveReservation(Reservation reservation) {
