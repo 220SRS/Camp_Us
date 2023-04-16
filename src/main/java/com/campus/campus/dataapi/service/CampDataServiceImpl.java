@@ -68,9 +68,31 @@ public class CampDataServiceImpl implements CampDataService {
                     String sigunguNm = (String) object.get("sigunguNm");
                     String addr = (String) object.get("addr1");
 
+                    String grass = (String) object.get("siteBottomCl1");
+                    String crushStone = (String) object.get("siteBottomCl2");
+                    String tech = (String) object.get("siteBottomCl3");
+                    String pebble = (String) object.get("siteBottomCl4");
+                    String soil = (String) object.get("siteBottomCl5");
+
+                    String toiletCnt = (String) object.get("toiletCo");
+                    String swrmCnt = (String) object.get("swrmCo");
+
+                    String surrFacilities = (String) object.get("posblFcltyCl");
+
+                    String caravanAc = (String) object.get("caravAcmpnyAt");
+                    String trailerAc = (String) object.get("trlerAcmpnyAt");
+
+                    String eqpRental = (String) object.get("eqpmnLendCl");
+                    String exprnYn = (String) object.get("exprnProgrmAt");
+                    String amenities = (String) object.get("sbrsCl");
+                    String locationType = (String) object.get("lctCl");
+                    String animalYn = (String) object.get("animalYn");
+
 
                     SaveCampRequestDto saveCampRequestDto = new SaveCampRequestDto(contentId, campingName, summaryIntro
-                            , intro, category, doNm, sigunguNm, addr);
+                            , intro, category, doNm, sigunguNm, addr, grass, crushStone, tech, pebble, soil, toiletCnt
+                            , swrmCnt, surrFacilities, caravanAc, trailerAc, eqpRental, exprnYn, amenities, animalYn
+                            , locationType);
 
                     CampBaseInfo campBaseInfo = CampBaseInfo.builder()
                             .contentId(contentId)
@@ -81,6 +103,21 @@ public class CampDataServiceImpl implements CampDataService {
                             .doNm(doNm)
                             .sigunguNm(sigunguNm)
                             .addr(addr)
+                            .grass(grass)
+                            .crushStone(crushStone)
+                            .tech(tech)
+                            .pebble(pebble)
+                            .soil(soil)
+                            .toiletCnt(toiletCnt)
+                            .swrmCnt(swrmCnt)
+                            .surrFacilities(surrFacilities)
+                            .caravanAc(caravanAc)
+                            .trailerAc(trailerAc)
+                            .eqpRental(eqpRental)
+                            .exprnYn(exprnYn)
+                            .amenities(amenities)
+                            .animalYN(animalYn)
+                            .locationType(locationType)
                             .build();
 
                     campRepository.save(campBaseInfo);
