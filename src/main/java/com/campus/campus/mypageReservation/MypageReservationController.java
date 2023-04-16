@@ -2,10 +2,7 @@ package com.campus.campus.mypageReservation;
 
 import com.campus.campus.reservation.entity.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
@@ -20,7 +17,6 @@ public class MypageReservationController {
     public MypageReservationController(MyPageReservationServiceImpl myPageReservationService) {
         this.myPageReservationService = myPageReservationService;
     }
-
 
     @GetMapping("/reservation")
     public ResponseEntity<ReservationListResponseDto> findFilterReservationByUserId(
@@ -48,4 +44,9 @@ public class MypageReservationController {
         System.out.println(responseDto);
         return ResponseEntity.ok(responseDto);
     }
+    @DeleteMapping("/reservation")
+    public ResponseEntity<?> deleteReservation(@RequestParam("rsvId") Long rsvId){
+        return myPageReservationService.deleteReservation(rsvId);
+    }
+
 }

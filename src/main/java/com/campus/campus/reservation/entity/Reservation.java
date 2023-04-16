@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -29,9 +30,9 @@ public class Reservation {
     @Column
     private Integer mbCnt; //인원 수
     @Column
-    private Date startDate; // 예약 시작일
+    private LocalDateTime startDate; // 예약 시작일
     @Column
-    private Date endDate; // 예약 종료일
+    private LocalDateTime endDate; // 예약 종료일
     @Column
     private Long paymentAmt; // 결제 금액
     @Column
@@ -39,7 +40,7 @@ public class Reservation {
     @Enumerated(EnumType.STRING)
     private RsvStatus rsvStatus = RsvStatus.RSV_USING; // 예약 진행 상태(완료/진행/취소)
     @Column
-    private Date rsvDate;  // 예약한 날짜
+    private LocalDateTime rsvDate;  // 예약한 날짜
 
     public static Reservation of(ReservationSaveDto reservationSaveDto) {
         Reservation reservation = new Reservation();

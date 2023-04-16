@@ -1,14 +1,13 @@
 package com.campus.campus.mypageReservation;
 
+import com.campus.campus.reservation.entity.Option;
 import com.campus.campus.reservation.entity.Reservation;
 import com.campus.campus.reservation.repository.ReservationRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Date;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -31,7 +30,15 @@ public class MyPageReservationServiceImpl implements MyPageReservationService {
     }
 
     @Override
-    public void deleteReservation(long rsv_id) {
+    public ResponseEntity<?> deleteReservation(long rsvId) {
+        Optional<Reservation> optionalReservation = reservationRepository.findById(rsvId);
+        if(optionalReservation.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        Reservation reservation = optionalReservation.get();
+        reservationRepository.delete(reservation);
+
+        return ResponseEntity.ok().build();
 
     }
 
