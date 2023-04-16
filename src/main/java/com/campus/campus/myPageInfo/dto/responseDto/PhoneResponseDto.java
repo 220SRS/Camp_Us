@@ -1,4 +1,4 @@
-package com.campus.campus.member.myPageInfo.dto.responseDto;
+package com.campus.campus.myPageInfo.dto.responseDto;
 
 import com.campus.campus.member.Member;
 import lombok.AccessLevel;

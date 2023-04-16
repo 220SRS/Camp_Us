@@ -1,14 +1,14 @@
-package com.campus.campus.member.myPageInfo.service;
+package com.campus.campus.myPageInfo.service;
 
 import com.campus.campus.member.Member;
 import com.campus.campus.member.MemberRepository;
-import com.campus.campus.member.myPageInfo.dto.responseDto.MypageInfoResponseDto;
-import com.campus.campus.member.myPageInfo.dto.responseDto.NameResponseDto;
-import com.campus.campus.member.myPageInfo.dto.responseDto.NickNameResponseDto;
-import com.campus.campus.member.myPageInfo.dto.responseDto.PhoneResponseDto;
-import com.campus.campus.member.myPageInfo.dto.updateDto.NameUpdateDto;
-import com.campus.campus.member.myPageInfo.dto.updateDto.NickNameUpdateDto;
-import com.campus.campus.member.myPageInfo.dto.updateDto.PhoneUpdateDto;
+import com.campus.campus.myPageInfo.dto.responseDto.MypageInfoResponseDto;
+import com.campus.campus.myPageInfo.dto.responseDto.NameResponseDto;
+import com.campus.campus.myPageInfo.dto.responseDto.NickNameResponseDto;
+import com.campus.campus.myPageInfo.dto.responseDto.PhoneResponseDto;
+import com.campus.campus.myPageInfo.dto.updateDto.NameUpdateDto;
+import com.campus.campus.myPageInfo.dto.updateDto.NickNameUpdateDto;
+import com.campus.campus.myPageInfo.dto.updateDto.PhoneUpdateDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

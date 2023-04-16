@@ -1,13 +1,13 @@
-package com.campus.campus.member.myPageInfo.controller;
+package com.campus.campus.myPageInfo.controller;
 
-import com.campus.campus.member.myPageInfo.dto.responseDto.MypageInfoResponseDto;
-import com.campus.campus.member.myPageInfo.dto.responseDto.NameResponseDto;
-import com.campus.campus.member.myPageInfo.dto.responseDto.NickNameResponseDto;
-import com.campus.campus.member.myPageInfo.dto.responseDto.PhoneResponseDto;
-import com.campus.campus.member.myPageInfo.dto.updateDto.NameUpdateDto;
-import com.campus.campus.member.myPageInfo.dto.updateDto.NickNameUpdateDto;
-import com.campus.campus.member.myPageInfo.dto.updateDto.PhoneUpdateDto;
-import com.campus.campus.member.myPageInfo.service.MyPageInfoService;
+import com.campus.campus.myPageInfo.dto.responseDto.MypageInfoResponseDto;
+import com.campus.campus.myPageInfo.dto.responseDto.NameResponseDto;
+import com.campus.campus.myPageInfo.dto.responseDto.NickNameResponseDto;
+import com.campus.campus.myPageInfo.dto.responseDto.PhoneResponseDto;
+import com.campus.campus.myPageInfo.dto.updateDto.NameUpdateDto;
+import com.campus.campus.myPageInfo.dto.updateDto.NickNameUpdateDto;
+import com.campus.campus.myPageInfo.dto.updateDto.PhoneUpdateDto;
+import com.campus.campus.myPageInfo.service.MyPageInfoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

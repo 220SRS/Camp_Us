@@ -1,4 +1,4 @@
-package com.campus.campus.member.myPageInfo.dto.updateDto;
+package com.campus.campus.myPageInfo.dto.updateDto;
 
 import lombok.Getter;
 
