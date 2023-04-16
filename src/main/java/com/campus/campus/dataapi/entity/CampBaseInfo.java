@@ -15,22 +15,22 @@ import javax.persistence.*;
 public class CampBaseInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long store_id;        // 업체 식별자 (contentId)
+    private Long storeId;        // 업체 식별자 (contentId)
     @Column
-    private String store_name;        // 이름(=캠핑장 이름) (facltNm)
+    private String storeName;        // 이름(=캠핑장 이름) (facltNm)
     @Column
-    private String biz_num;        // 사업자 번호 (bizrno)
+    private String bizNum;        // 사업자 번호 (bizrno)
     @Column
-    private String main_img;        // 대표이미지 (firstImageUrl)
+    private String mainImg;        // 대표이미지 (firstImageUrl)
     @Column(columnDefinition = "TEXT")
-    private String simple_info;        // 한줄 설명 (lineIntro)
+    private String simpleInfo;        // 한줄 설명 (lineIntro)
 
     @Column(columnDefinition = "TEXT")
-    private String detail_info;        // 여러줄 설명 (intro)
+    private String detailInfo;        // 여러줄 설명 (intro)
     @Column
-    private String store_phone;        // 번호 (tel)
+    private String storePhone;        // 번호 (tel)
     @Column
-    private String site_url;        // 사이트 주소 (homepage)
+    private String siteUrl;        // 사이트 주소 (homepage)
     @Column
     private String category;        // 업종 구분 (induty)
     @Column
@@ -46,45 +46,50 @@ public class CampBaseInfo {
     @Column
     private Double longitude;        // 위도 (mapY)
     @Column(columnDefinition = "TEXT")
-    private String direction_info;        // 오시는 길 (direction)
+    private String directionInfo;        // 오시는 길 (direction)
     @Column
-    private String basic_facility;        // 기본 시설 (sbrsCl)
+    private String amenities;        // 기본 시설 (sbrsCl)
     @Column
     private String surroundings;        // 입지 구분 (lctCl)
     @Column
-    private String surround_info;        // 주변 정보 (posblFcltyCl)
+    private String surrFacilities;        // 주변 정보 (posblFcltyCl)
     @Column
-    private String glamping_facility;        // 글램핑 - 내부시설 (glampInnerFclty)
+    private String glampingFacility;        // 글램핑 - 내부시설 (glampInnerFclty)
     @Column
-    private String caravan_facility;        // 카라반 - 내부시설 (caravInnerFclty)
+    private String caravanFacility;        // 카라반 - 내부시설 (caravInnerFclty)
     @Column
-    private String operating_season;        // 운영기간 (operPdCl)
+    private String operatingSeason;        // 운영기간 (operPdCl)
     @Column
-    private String operating_date;        // 운영일 (operDeCl)
+    private String operatingDate;        // 운영일 (operDeCl)
     @Column
-    private Integer toilet_cnt;        // 화장실 개수 (toiletCo)
+    private Integer toiletCnt;        // 화장실 개수 (toiletCo)
     @Column
-    private Integer swrm_cnt;        // 샤워실 개수 (swrmCo)
+    private Integer swrmCnt;        // 샤워실 개수 (swrmCo)
     @Column
-    private Integer wtrpl_cnt;        // 개수대 개수 (wtrplCo)
+    private Integer wtrplCnt;        // 개수대 개수 (wtrplCo)
     @Column
-    private String animal_yn;        // 애완동물출입 (animalCmgCl)
+    private String animalYn;        // 애완동물출입 (animalCmgCl)
     @Column(columnDefinition = "TEXT")
-    private String camp_feature;        // 특징 (featureNm)
+    private String campFeature;        // 특징 (featureNm)
     @Column
-    private Integer siteBottomCl1;        // 잔디 (단위:면) (siteBottomCl1)
+    private Integer grass;        // 잔디 (단위:면) (siteBottomCl1)
     @Column
-    private Integer siteBottomCl2;        // 파쇄석 (단위:면) (siteBottomCl2)
+    private Integer crushStone;        // 파쇄석 (단위:면) (siteBottomCl2)
     @Column
-    private Integer siteBottomCl3;        // 테크 (단위:면) (siteBottomCl3)
+    private Integer tech;        // 테크 (단위:면) (siteBottomCl3)
     @Column
-    private Integer siteBottomCl4;        // 자갈 (단위:면) (siteBottomCl4)
+    private Integer pebble;        // 자갈 (단위:면) (siteBottomCl4)
     @Column
-    private Integer siteBottomCl5;        // 맨흙 (단위:면) (siteBottomCl5)
+    private Integer soil;        // 맨흙 (단위:면) (siteBottomCl5)
     @Column
-    private String exprn_yn;        // 체험프로그램 여부(Y:사용, N:미사용) (exprnProgrmAt)
+    private String caravanAc;  // 개인 카라반 동반 여부
+    @Column
+    private String trailerAc;  // 개인 트레일러 동반 여부
+    @Column
+    private String eqpRental;  // 캠핑장비 대여
+    @Column
+    private String exprnYn;        // 체험프로그램 여부(Y:사용, N:미사용) (exprnProgrmAt)
     @Column
     private String exprn;        // 그 외 체험활동 (exprn)
-
 
 }

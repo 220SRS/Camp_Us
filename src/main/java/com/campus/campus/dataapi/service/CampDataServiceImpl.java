@@ -76,9 +76,9 @@ public class CampDataServiceImpl implements CampDataService {
                     Double latitude = Double.parseDouble(object.get("mapX").toString());
                     Double longitude = Double.parseDouble(object.get("mapY").toString());
                     String direction_info = (String) object.get("direction");
-                    String basic_facility = (String) object.get("sbrsCl");
+                    String amenities = (String) object.get("sbrsCl");
                     String surroundings = (String) object.get("lctCl");
-                    String surround_info = (String) object.get("posblFcltyCl");
+                    String surrFacilities = (String) object.get("posblFcltyCl");
                     String glamping_facility = (String) object.get("glampInnerFclty");
                     String caravan_facility = (String) object.get("caravInnerFclty");
                     String operating_season = (String) object.get("operPdCl");
@@ -88,26 +88,29 @@ public class CampDataServiceImpl implements CampDataService {
                     Integer wtrpl_cnt = Integer.parseInt(object.get("wtrplCo").toString());
                     String animal_yn = (String) object.get("animalCmgCl");
                     String camp_feature = (String) object.get("featureNm");
-                    Integer siteBottomCl1 = Integer.parseInt(object.get("siteBottomCl1").toString());
-                    Integer siteBottomCl2 = Integer.parseInt(object.get("siteBottomCl2").toString());
-                    Integer siteBottomCl3 = Integer.parseInt(object.get("siteBottomCl3").toString());
-                    Integer siteBottomCl4 = Integer.parseInt(object.get("siteBottomCl4").toString());
-                    Integer siteBottomCl5 = Integer.parseInt(object.get("siteBottomCl5").toString());
+                    Integer grass = Integer.parseInt(object.get("siteBottomCl1").toString());
+                    Integer crushStone = Integer.parseInt(object.get("siteBottomCl2").toString());
+                    Integer tech = Integer.parseInt(object.get("siteBottomCl3").toString());
+                    Integer pebble = Integer.parseInt(object.get("siteBottomCl4").toString());
+                    Integer soil = Integer.parseInt(object.get("siteBottomCl5").toString());
+                    String caravanAc = (String) object.get("caravAcmpnyAt");
+                    String trailerAc = (String) object.get("trlerAcmpnyAt");
+                    String eqpRental = (String) object.get("eqpmnLendCl");
                     String exprn_yn = (String) object.get("exprnProgrmAt");
                     String exprn = (String) object.get("exprn");
 
 
-                    SaveCampRequestDto saveCampRequestDto = new SaveCampRequestDto(store_id, store_name, biz_num, main_img, simple_info, detail_info, store_phone, site_url, category, location, doNm, sigunguNm, zipcode, latitude, longitude, direction_info, basic_facility, surroundings, surround_info, glamping_facility, caravan_facility, operating_season, operating_date, toilet_cnt, swrm_cnt, wtrpl_cnt, animal_yn, camp_feature, siteBottomCl1, siteBottomCl2, siteBottomCl3, siteBottomCl4, siteBottomCl5, exprn_yn, exprn);
+                    //SaveCampRequestDto saveCampRequestDto = new SaveCampRequestDto(store_id, store_name, biz_num, main_img, simple_info, detail_info, store_phone, site_url, category, location, doNm, sigunguNm, zipcode, latitude, longitude, direction_info, basic_facility, surroundings, surround_info, glamping_facility, caravan_facility, operating_season, operating_date, toilet_cnt, swrm_cnt, wtrpl_cnt, animal_yn, camp_feature, siteBottomCl1, siteBottomCl2, siteBottomCl3, siteBottomCl4, siteBottomCl5, exprn_yn, exprn);
 
                     CampBaseInfo campBaseInfo = CampBaseInfo.builder()
-                            .store_id(store_id)
-                            .store_name(store_name)
-                            .biz_num(biz_num)
-                            .main_img(main_img)
-                            .simple_info(simple_info)
-                            .detail_info(detail_info)
-                            .store_phone(store_phone)
-                            .site_url(site_url)
+                            .storeId(store_id)
+                            .storeName(store_name)
+                            .bizNum(biz_num)
+                            .mainImg(main_img)
+                            .simpleInfo(simple_info)
+                            .detailInfo(detail_info)
+                            .storePhone(store_phone)
+                            .siteUrl(site_url)
                             .category(category)
                             .location(location)
                             .doNm(doNm)
@@ -115,25 +118,28 @@ public class CampDataServiceImpl implements CampDataService {
                             .zipcode(zipcode)
                             .latitude(latitude)
                             .longitude(longitude)
-                            .direction_info(direction_info)
-                            .basic_facility(basic_facility)
+                            .directionInfo(direction_info)
+                            .amenities(amenities)
                             .surroundings(surroundings)
-                            .surround_info(surround_info)
-                            .glamping_facility(glamping_facility)
-                            .caravan_facility(caravan_facility)
-                            .operating_season(operating_season)
-                            .operating_date(operating_date)
-                            .toilet_cnt(toilet_cnt)
-                            .swrm_cnt(swrm_cnt)
-                            .wtrpl_cnt(wtrpl_cnt)
-                            .animal_yn(animal_yn)
-                            .camp_feature(camp_feature)
-                            .siteBottomCl1(siteBottomCl1)
-                            .siteBottomCl2(siteBottomCl2)
-                            .siteBottomCl3(siteBottomCl3)
-                            .siteBottomCl4(siteBottomCl4)
-                            .siteBottomCl5(siteBottomCl5)
-                            .exprn_yn(exprn_yn)
+                            .surrFacilities(surrFacilities)
+                            .glampingFacility(glamping_facility)
+                            .caravanFacility(caravan_facility)
+                            .operatingSeason(operating_season)
+                            .operatingDate(operating_date)
+                            .toiletCnt(toilet_cnt)
+                            .swrmCnt(swrm_cnt)
+                            .wtrplCnt(wtrpl_cnt)
+                            .animalYn(animal_yn)
+                            .campFeature(camp_feature)
+                            .grass(grass)
+                            .crushStone(crushStone)
+                            .tech(tech)
+                            .pebble(pebble)
+                            .soil(soil)
+                            .caravanAc(caravanAc)
+                            .trailerAc(trailerAc)
+                            .eqpRental(eqpRental)
+                            .exprnYn(exprn_yn)
                             .exprn(exprn)
                             .build();
 
@@ -157,13 +163,9 @@ public class CampDataServiceImpl implements CampDataService {
             throw new DataLoadFailedException(e);
         }
     }
-
-
     private void checkURLKey(JSONObject jsonObject) {
         if (jsonObject.get("code") != null && (int) jsonObject.get("code") == -4) {
             throw new WrongURLException();
         }
     }
-
-
 }
