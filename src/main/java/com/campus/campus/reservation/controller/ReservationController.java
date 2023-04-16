@@ -1,15 +1,14 @@
 package com.campus.campus.reservation.controller;
 
+import com.campus.campus.member.MemberService;
 import com.campus.campus.mypageReservation.ReservationResponseDto;
+import com.campus.campus.reservation.dto.ReservationPatchDto;
 import com.campus.campus.reservation.dto.ReservationSaveDto;
 import com.campus.campus.reservation.entity.Reservation;
 import com.campus.campus.reservation.service.ReservationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,5 +29,4 @@ public class ReservationController {
         ReservationResponseDto reservationResponseDto = reservationService.postReservation(reservationSaveDto);
         return ResponseEntity.ok(reservationResponseDto);
     }
-
 }

@@ -13,7 +13,7 @@ import java.util.Date;
 public class ReservationSaveDto {
 
     private Long rsvId; // 예약 id
-    private Long userId;    // user id
+    private Long memberId;    // member id
     private Long storeId;   // 캠핑장 id
     private Integer mbCnt;  // 인원 수
     private LocalDateTime startDate;  // 시작 날짜

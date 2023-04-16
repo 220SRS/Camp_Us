@@ -19,12 +19,8 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rsvId; // 예약 id
-
-    //    private Campsite campId; // 캠핑장정보 가져오기
-
-    //    private Users users; // user정보 가져오기
     @Column
-    private Long userId;   // user id
+    private Long memberId;   // member id
     @Column
     private Long storeId;  // 캠핑장 id
     @Column
@@ -45,7 +41,7 @@ public class Reservation {
     public static Reservation of(ReservationSaveDto reservationSaveDto) {
         Reservation reservation = new Reservation();
 
-        reservation.setUserId(reservationSaveDto.getUserId());
+        reservation.setMemberId(reservationSaveDto.getMemberId());
         reservation.setStoreId(reservationSaveDto.getStoreId());
         reservation.setMbCnt(reservationSaveDto.getMbCnt());
         reservation.setStartDate(reservationSaveDto.getStartDate());
@@ -72,5 +68,4 @@ public class Reservation {
             this.status = status;
         }
     }
-
 }
