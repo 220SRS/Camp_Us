@@ -60,9 +60,9 @@ public class CampDataServiceImpl implements CampDataService {
                 for (int i = 0; i < jsonArray.size(); i++) {
                     JSONObject object = (JSONObject) jsonArray.get(i);
                     Long contentId = Long.parseLong(object.get("contentId").toString());
-                    String campingName = (String) object.get("facltNm");
-                    String summaryIntro = (String) object.get("lineIntro");
-                    String intro = (String) object.get("intro");
+                    String storeName = (String) object.get("facltNm");
+                    String simpleInfo = (String) object.get("lineIntro"); //한줄 설명
+                    String detailInfo = (String) object.get("intro"); //여러줄 설명
                     String category = (String) object.get("induty");
                     String doNm = (String) object.get("doNm");
                     String sigunguNm = (String) object.get("sigunguNm");
@@ -89,16 +89,16 @@ public class CampDataServiceImpl implements CampDataService {
                     String animalYn = (String) object.get("animalYn");
 
 
-                    SaveCampRequestDto saveCampRequestDto = new SaveCampRequestDto(contentId, campingName, summaryIntro
-                            , intro, category, doNm, sigunguNm, addr, grass, crushStone, tech, pebble, soil, toiletCnt
+                    SaveCampRequestDto saveCampRequestDto = new SaveCampRequestDto(contentId, storeName, simpleInfo
+                            , detailInfo, category, doNm, sigunguNm, addr, grass, crushStone, tech, pebble, soil, toiletCnt
                             , swrmCnt, surrFacilities, caravanAc, trailerAc, eqpRental, exprnYn, amenities, animalYn
                             , locationType);
 
                     CampBaseInfo campBaseInfo = CampBaseInfo.builder()
                             .contentId(contentId)
-                            .campingName(campingName)
-                            .summaryIntro(summaryIntro)
-                            .intro(intro)
+                            .storeName(storeName)
+                            .simpleInfo(simpleInfo)
+                            .detailInfo(detailInfo)
                             .category(category)
                             .doNm(doNm)
                             .sigunguNm(sigunguNm)

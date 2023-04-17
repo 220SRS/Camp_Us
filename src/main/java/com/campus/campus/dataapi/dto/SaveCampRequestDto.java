@@ -9,9 +9,9 @@ import javax.persistence.Column;
 @NoArgsConstructor
 public class SaveCampRequestDto {
     private Long contentId;
-    private String campingName;
-    private String summaryIntro;
-    private String intro;
+    private String storeName;
+    private String simpleInfo;
+    private String detailInfo;
     private String category;
     private String doNm;
     private String sigunguNm;
