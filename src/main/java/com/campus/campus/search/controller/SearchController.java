@@ -1,11 +1,13 @@
 package com.campus.campus.search.controller;
 
+import com.campus.campus.search.dto.SearchStoreResponseDto;
 import com.campus.campus.search.entity.SearchStore;
 import com.campus.campus.search.service.SearchService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/search")
@@ -35,10 +37,13 @@ public class SearchController {
     @GetMapping("/camps")
     public ResponseEntity getCampList(){
         System.out.println("getCampList2");
-        List<SearchStore> searchStores = searchService.findAll();
+        List<SearchStore> searchStores = searchService.stubFindAll();
+        List<SearchStoreResponseDto> searchStoreResponse =new ArrayList<>();
+        for (SearchStore searchStore : searchStores) {
+            searchStoreResponse.add(new SearchStoreResponseDto(searchStore));
+        }
 
-
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(searchStoreResponse,HttpStatus.OK);
     }
 
 /*

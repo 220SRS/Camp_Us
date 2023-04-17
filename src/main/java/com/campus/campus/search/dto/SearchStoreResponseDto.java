@@ -1,16 +1,39 @@
-package com.campus.campus.search.entity;
+package com.campus.campus.search.dto;
 
+import com.campus.campus.search.entity.SearchStore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class SearchStore {
+public class SearchStoreResponseDto {
+
+    public SearchStoreResponseDto(SearchStore searchStore) {
+        this.searchStoreId = searchStore.getSearchStoreId();
+        this.searchStoreName = searchStore.getSearchStoreName();
+        this.category = searchStore.getCategory();
+        this.doNm = searchStore.getDoNm();
+        this.sigunguNm = searchStore.getSigunguNm();
+        this.grass = searchStore.getGrass();
+        this.crushStone = searchStore.getCrushStone();
+        this.tech = searchStore.getTech();
+        this.pebble = searchStore.getPebble();
+        this.soil = searchStore.getSoil();
+        this.toiletCnt = searchStore.getToiletCnt();
+        this.swrmCnt = searchStore.getSwrmCnt();
+        this.surrFacilities = searchStore.getSurrFacilities();
+        this.caravanAc = searchStore.getCaravanAc();
+        this.trailerAc = searchStore.getTrailerAc();
+        this.eqpRental = searchStore.getEqpRental();
+        this.exprnYn = searchStore.getExprnYn();
+        this.amenities = searchStore.getAmenities();
+        this.locationType = searchStore.getLocationType();
+        this.animalYN = searchStore.getAnimalYN();
+    }
 
     long searchStoreId;
 
@@ -63,6 +86,7 @@ public class SearchStore {
 
     //환경 탭 구현하기 > ENUM 처리로 간단하게 처리가 가능한지 고민하기
     //바다,산,숲,강,호수,계곡,섬,평야,기타
+
 
 
 }
