@@ -1,19 +1,23 @@
 package com.campus.campus.search.controller;
 
+import com.campus.campus.search.entity.SearchStore;
+import com.campus.campus.search.service.SearchService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequestMapping("/search")
 @RestController
 public class SearchController {
 
-    //나중에 기본 로딩때 가져올 리스트는 어떻게 구현해야 하는지 고민.
-    //메서드1
 
-    //기본 약속
-    //검색 버튼을 누를 때만 작동한다.
-    //주로 검색 기능이니까 get메서드 위주 구성
+    private final SearchService searchService;
+
+    public SearchController(SearchService searchService) {
+        this.searchService = searchService;
+    }
 
     //전면 수정
 /*
@@ -31,10 +35,14 @@ public class SearchController {
     @GetMapping("/camps")
     public ResponseEntity getCampList(){
         System.out.println("getCampList2");
+        List<SearchStore> searchStores = searchService.findAll();
+
 
         return new ResponseEntity(HttpStatus.OK);
     }
 
-
+/*
+    @GetMapping("/{store_id}")
+    public ResponseEntity getStoreOn*/
 
 }
