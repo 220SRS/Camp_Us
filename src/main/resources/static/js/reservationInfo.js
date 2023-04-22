@@ -41,17 +41,19 @@ function showReservationData(reservationData) {
     // 입력된 데이터 갯수에 따라 카드를 생성하는 코드
     for (var i = 0; i < reservationData.length; i++) {
         var data = reservationData[i];
+        var startDate = new Date(data.startDate).toLocaleDateString();
+        var endDate = new Date(data.endDate).toLocaleDateString();
+
         var cardHtml = `<div class="card" id="reviewcard-${i}">
   <div class="strip_booking">
     <div class="row">
       <div class="col-md-2 col-sm-2">
         <div class="photo">
-          
-     
+          <img src="${data.mainImg}" alt=""/>
         </div>
       </div>
       <div class="col-md-6 col-sm-5">
-        <h3 class="hotel_booking">${data.storeId}<span>${data.startDate} - ${data.endDate}</span></h3>
+        <h3 class="hotel_booking">${data.storeId}<span>${startDate} - ${endDate}</span></h3>
       </div>
       <div class="col-md-2 col-sm-3">
         <ul class="info_booking">

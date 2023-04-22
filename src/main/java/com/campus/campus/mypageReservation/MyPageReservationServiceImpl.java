@@ -1,6 +1,5 @@
 package com.campus.campus.mypageReservation;
 
-import com.campus.campus.reservation.entity.Option;
 import com.campus.campus.reservation.entity.Reservation;
 import com.campus.campus.reservation.repository.ReservationRepository;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,25 +19,25 @@ public class MyPageReservationServiceImpl implements MyPageReservationService {
     @Override
     public List<Reservation> findFilterReservationByUserId(long user_id, String status, String period) {
         LocalDateTime currentDate = LocalDateTime.now();  // 현재 시간
-        LocalDateTime  sDate = generateDateWithMonthOffsetByPeriod(period, currentDate);
+        LocalDateTime sDate = generateDateWithMonthOffsetByPeriod(period, currentDate);
         List<Reservation.RsvStatus> rsvStatusList = generateRsvStatusListByStatus(status);
 
-        System.out.println("sDate : "+ sDate);
+        System.out.println("sDate : " + sDate);
         System.out.println(rsvStatusList);
 
         if (period.equals("전체")) {
             return reservationRepository
-                    .findByUserIdAndRsvStatusIn(user_id, rsvStatusList);
+                    .findByMember_MemberIdAndRsvStatusIn(user_id, rsvStatusList);
         } else {
             return reservationRepository
-                    .findByUserIdAndRsvStatusInAndRsvDateBetween(user_id, rsvStatusList, sDate, currentDate);
+                    .findByMemberIdAndRsvStatusInAndRsvDateBetween(user_id, rsvStatusList, sDate, currentDate);
         }
     }
 
     @Override
     public ResponseEntity<?> deleteReservation(long rsvId) {
         Optional<Reservation> optionalReservation = reservationRepository.findById(rsvId);
-        if(optionalReservation.isEmpty()){
+        if (optionalReservation.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         Reservation reservation = optionalReservation.get();
@@ -63,7 +64,7 @@ public class MyPageReservationServiceImpl implements MyPageReservationService {
         return rsvStatusList;
     }
 
-    public LocalDateTime  generateDateWithMonthOffsetByPeriod(String period, LocalDateTime currentDate) {
+    public LocalDateTime generateDateWithMonthOffsetByPeriod(String period, LocalDateTime currentDate) {
         /* 특정 period에 맞게 시간 계산하는 함수(6개월 전/1년 전)
         - currentDate : 현재 시각
         - period : 선택한 검색 기간 (6개월/1년/전체)

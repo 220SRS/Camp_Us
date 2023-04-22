@@ -1,7 +1,6 @@
 package com.campus.campus.dataapi.service;
 
 import com.campus.campus.dataapi.dto.LoadDataResponseDto;
-import com.campus.campus.dataapi.dto.SaveCampRequestDto;
 import com.campus.campus.dataapi.entity.CampBaseInfo;
 import com.campus.campus.dataapi.exception.DataLoadFailedException;
 import com.campus.campus.dataapi.exception.WrongURLException;
@@ -24,6 +23,7 @@ import java.net.URL;
 public class CampDataServiceImpl implements CampDataService {
 
     public final SaveCampRepository campRepository;
+
 
     public LoadDataResponseDto loadAndSaveFromApiWithJson() {
         try {
@@ -168,4 +168,5 @@ public class CampDataServiceImpl implements CampDataService {
             throw new WrongURLException();
         }
     }
+
 }

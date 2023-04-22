@@ -33,7 +33,8 @@ public class MypageReservationController {
         for (Reservation reservation : reservations) {
             ReservationResponseDto reservationResponseDto = new ReservationResponseDto();
             reservationResponseDto.setRsvId(reservation.getRsvId());
-            reservationResponseDto.setStoreId(reservation.getStoreId());
+            reservationResponseDto.setStoreId(reservation.getCampBaseInfo().getStoreId());
+            reservationResponseDto.setMainImg(reservation.getCampBaseInfo().getMainImg());
             reservationResponseDto.setStartDate(reservation.getStartDate());
             reservationResponseDto.setEndDate(reservation.getEndDate());
             reservationResponseDto.setPaymentAmt(reservation.getPaymentAmt());
@@ -46,9 +47,9 @@ public class MypageReservationController {
         System.out.println(responseDto);
         return ResponseEntity.ok(responseDto);
     }
+
     @DeleteMapping("/reservation")
-    public ResponseEntity deleteReservation(@RequestParam("rsvId") Long rsvId){
-        String QUESTION_DEFAULT_URL = "/reservation/1";
+    public ResponseEntity deleteReservation(@RequestParam("rsvId") Long rsvId) {
 
         return myPageReservationService.deleteReservation(rsvId);
     }
