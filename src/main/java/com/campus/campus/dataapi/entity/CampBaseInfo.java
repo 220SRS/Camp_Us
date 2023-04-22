@@ -1,6 +1,8 @@
 package com.campus.campus.dataapi.entity;
 
 import com.campus.campus.reservation.entity.Reservation;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,6 +17,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "storeId")
 public class CampBaseInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -99,5 +102,7 @@ public class CampBaseInfo {
     // Reservation 매핑
     @OneToMany(mappedBy = "campBaseInfo")
     private List<Reservation> reservationList = new ArrayList<>();
+
+
 
 }

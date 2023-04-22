@@ -2,9 +2,9 @@ package com.campus.campus.reservation.entity;
 
 import com.campus.campus.dataapi.entity.CampBaseInfo;
 import com.campus.campus.member.Member;
-import com.campus.campus.reservation.dto.ReservationSaveDto;
 import com.campus.campus.review.Review;
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +14,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 
@@ -23,6 +22,8 @@ import java.util.List;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "rsvId")
+
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +33,7 @@ public class Reservation {
     private CampBaseInfo campBaseInfo; // 캠핑장정보 가져오기
     @ManyToOne
     @JoinColumn(name = "memberId", nullable = false)
+    //@JsonManagedReference
     private Member member; // member정보 가져오기
     @Column(nullable = false)
     private Integer mbCnt; // 인원 수
@@ -47,7 +49,7 @@ public class Reservation {
     private RsvStatus rsvStatus = RsvStatus.RSV_USING; // 예약 진행 상태(완료/진행/취소)
     @CreatedDate
     @Column
-    private LocalDateTime rsvDate = LocalDateTime.now();  // 예약 생성 시간 및 날짜
+    private LocalDateTime rsvDate;  // 예약 생성 시간 및 날짜
 
     // Review 매핑
     @OneToMany(mappedBy = "reservation")
@@ -68,18 +70,5 @@ public class Reservation {
             this.status = status;
         }
     }
-
-//    public static Reservation of(ReservationSaveDto reservationSaveDto) {
-//        Reservation reservation = new Reservation();
-//
-//        reservation.setMbCnt(reservationSaveDto.getMbCnt());
-//        reservation.setStartDate(reservationSaveDto.getStartDate());
-//        reservation.setEndDate(reservationSaveDto.getEndDate());
-//        reservation.setPaymentAmt(reservationSaveDto.getPaymentAmt());
-//        reservation.setUserRequest(reservationSaveDto.getUserRequest());
-//        reservation.setRsvStatus(reservationSaveDto.getRsvStatus());
-//        reservation.setRsvDate(reservationSaveDto.getRsvDate());
-//
-//        return reservation;
-//    }
+    
 }
