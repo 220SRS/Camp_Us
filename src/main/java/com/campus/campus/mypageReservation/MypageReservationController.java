@@ -4,7 +4,9 @@ import com.campus.campus.reservation.entity.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +20,9 @@ public class MypageReservationController {
         this.myPageReservationService = myPageReservationService;
     }
 
-    @GetMapping("/reservation")
+    @GetMapping("/reservation/{user_id}")
     public ResponseEntity<ReservationListResponseDto> findFilterReservationByUserId(
-            @RequestParam("user_id") Long user_id,
+            @PathVariable("user_id") Long user_id,
             @RequestParam(value = "status", defaultValue = "이용중") String status,
             @RequestParam(value = "period", defaultValue = "6개월") String period
     ) {
@@ -45,7 +47,9 @@ public class MypageReservationController {
         return ResponseEntity.ok(responseDto);
     }
     @DeleteMapping("/reservation")
-    public ResponseEntity<?> deleteReservation(@RequestParam("rsvId") Long rsvId){
+    public ResponseEntity deleteReservation(@RequestParam("rsvId") Long rsvId){
+        String QUESTION_DEFAULT_URL = "/reservation/1";
+
         return myPageReservationService.deleteReservation(rsvId);
     }
 
