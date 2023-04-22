@@ -5,16 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 
-@Entity(name = "RESERVATION")
+@Entity
 @NoArgsConstructor
 @Getter
 @Setter
+@EntityListeners(AuditingEntityListener.class)
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +41,7 @@ public class Reservation {
     private String userRequest; // 요청 사항
     @Enumerated(EnumType.STRING)
     private RsvStatus rsvStatus = RsvStatus.RSV_USING; // 예약 진행 상태(완료/진행/취소)
-    @Column
+    @Column(name = "created_at")
     private LocalDateTime rsvDate;  // 예약한 날짜
 
     public static Reservation of(ReservationSaveDto reservationSaveDto) {

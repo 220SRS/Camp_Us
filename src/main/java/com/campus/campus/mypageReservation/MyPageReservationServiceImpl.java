@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -16,9 +17,12 @@ public class MyPageReservationServiceImpl implements MyPageReservationService {
 
     @Override
     public List<Reservation> findFilterReservationByUserId(long user_id, String status, String period) {
-        Date currentDate = new Date();  // 현재 시간
-        Date sDate = generateDateWithMonthOffsetByPeriod(period, currentDate);
+        LocalDateTime currentDate = LocalDateTime.now();  // 현재 시간
+        LocalDateTime  sDate = generateDateWithMonthOffsetByPeriod(period, currentDate);
         List<Reservation.RsvStatus> rsvStatusList = generateRsvStatusListByStatus(status);
+
+        System.out.println("sDate : "+ sDate);
+        System.out.println(rsvStatusList);
 
         if (period.equals("전체")) {
             return reservationRepository
@@ -59,26 +63,23 @@ public class MyPageReservationServiceImpl implements MyPageReservationService {
         return rsvStatusList;
     }
 
-    public Date generateDateWithMonthOffsetByPeriod(String period, Date currentDate) {
+    public LocalDateTime  generateDateWithMonthOffsetByPeriod(String period, LocalDateTime currentDate) {
         /* 특정 period에 맞게 시간 계산하는 함수(6개월 전/1년 전)
         - currentDate : 현재 시각
         - period : 선택한 검색 기간 (6개월/1년/전체)
              - default : 6개월
          */
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(currentDate);
         int monthsOffset = 0;
 
         if (period == null) {
-            monthsOffset = -6; // 기본값은 6개월
+            monthsOffset = 6;
         } else if (period.equals("6개월")) {
-            monthsOffset = -6;
+            monthsOffset = 6;
         } else if (period.equals("1년")) {
-            monthsOffset = -12;
+            monthsOffset = 12;
         }
 
-        calendar.add(Calendar.MONTH, monthsOffset);
-        return calendar.getTime();
+        return currentDate.minusMonths(monthsOffset);
     }
 
 }
