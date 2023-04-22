@@ -1,8 +1,7 @@
 package com.campus.campus.search.service;
 
-import com.campus.campus.search.entity.SearchStore;
-import com.campus.campus.search.entity.Store;
-import com.campus.campus.search.repository.StoreRepository;
+import com.campus.campus.dataapi.entity.CampBaseInfo;
+import com.campus.campus.dataapi.repository.SaveCampRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,35 +12,37 @@ import java.util.Optional;
 public class SearchService {
 
 
+    private final SaveCampRepository saveCampRepository;
+
+    public SearchService(SaveCampRepository saveCampRepository) {
+        this.saveCampRepository = saveCampRepository;
+    }
+/*
     private final StoreRepository storeRepository;
 
     public SearchService(StoreRepository storeRepository) {
         this.storeRepository = storeRepository;
-    }
+    }*/
 
-    public SearchStore findById(long storeId){
+    public CampBaseInfo findById(long storeId){
 
         System.out.println("service > findById()");
 
-        Optional<Store> store = storeRepository.findById(storeId);
-        System.out.println(store.get().getStoreName());
-        //SearchStore searchStore=SearchStore.of(store);
-
-        return new SearchStore();
+        Optional<CampBaseInfo> campBaseInfo = saveCampRepository.findById(storeId);
+        System.out.println(campBaseInfo.get().getStoreName());
+        return campBaseInfo.get();
     }
 
-    public List<SearchStore> findAll(){
+    public List<CampBaseInfo> findAll(){
 
         System.out.println("service > findAll()");
 
-        List<Store> stores=storeRepository.findAll();
-        List<SearchStore> searchStores=new ArrayList<>();
-        System.out.println(searchStores.get(0).getSearchStoreName());
+        List<CampBaseInfo> campBaseInfos=saveCampRepository.findAll();
 
-        return searchStores;
+        return campBaseInfos;
     }
 
-    public List<SearchStore> stubFindAll(){
+   /* public List<SearchStore> stubFindAll(){
         System.out.println("service > stub findAll()");
 
         // data.sql -> 인텔리제이
@@ -70,5 +71,5 @@ public class SearchService {
 
         return searchStores;
 
-    }
+    }*/
 }

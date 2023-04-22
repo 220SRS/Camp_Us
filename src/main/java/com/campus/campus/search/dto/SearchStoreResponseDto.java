@@ -1,5 +1,6 @@
 package com.campus.campus.search.dto;
 
+import com.campus.campus.dataapi.entity.CampBaseInfo;
 import com.campus.campus.search.entity.SearchStore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,9 +13,9 @@ import lombok.Setter;
 @Setter
 public class SearchStoreResponseDto {
 
-    public SearchStoreResponseDto(SearchStore searchStore) {
-        this.searchStoreId = searchStore.getSearchStoreId();
-        this.searchStoreName = searchStore.getSearchStoreName();
+    public SearchStoreResponseDto(CampBaseInfo searchStore) {
+        this.searchStoreId = searchStore.getContentId();
+        this.searchStoreName = searchStore.getStoreName();
         this.category = searchStore.getCategory();
         this.doNm = searchStore.getDoNm();
         this.sigunguNm = searchStore.getSigunguNm();

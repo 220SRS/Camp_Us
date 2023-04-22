@@ -1,5 +1,7 @@
 package com.campus.campus.search.controller;
 
+import com.campus.campus.dataapi.entity.CampBaseInfo;
+import com.campus.campus.search.dto.AllStoresResponseDto;
 import com.campus.campus.search.dto.SearchStoreResponseDto;
 import com.campus.campus.search.entity.SearchStore;
 import com.campus.campus.search.service.SearchService;
@@ -35,15 +37,26 @@ public class SearchController {
 
     //테스트 완료!
     @GetMapping("/camps")
-    public ResponseEntity getCampList(){
+    public ResponseEntity findAll(){
         System.out.println("getCampList2");
-        List<SearchStore> searchStores = searchService.stubFindAll();
-        List<SearchStoreResponseDto> searchStoreResponse =new ArrayList<>();
+        List<CampBaseInfo> campBaseInfos = searchService.findAll();
+        /*List<SearchStoreResponseDto> searchStoreResponse =new ArrayList<>();
         for (SearchStore searchStore : searchStores) {
             searchStoreResponse.add(new SearchStoreResponseDto(searchStore));
-        }
+        }*/
+        AllStoresResponseDto response = new AllStoresResponseDto(campBaseInfos);
 
-        return new ResponseEntity(searchStoreResponse,HttpStatus.OK);
+        return new ResponseEntity(response,HttpStatus.OK);
+    }
+
+    @GetMapping("/{campId}")
+    public ResponseEntity findById(@PathVariable long campId){
+        System.out.println("controller > findById");
+        CampBaseInfo campBaseInfo = searchService.findById(campId);
+        SearchStoreResponseDto response = new SearchStoreResponseDto(campBaseInfo);
+
+        return new ResponseEntity(response, HttpStatus.OK);
+
     }
 
 /*
