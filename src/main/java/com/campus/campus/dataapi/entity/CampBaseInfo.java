@@ -1,17 +1,23 @@
 package com.campus.campus.dataapi.entity;
 
+import com.campus.campus.reservation.entity.Reservation;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "stores")
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "storeId")
 public class CampBaseInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -91,5 +97,12 @@ public class CampBaseInfo {
     private String exprnYn;        // 체험프로그램 여부(Y:사용, N:미사용) (exprnProgrmAt)
     @Column
     private String exprn;        // 그 외 체험활동 (exprn)
+
+
+    // Reservation 매핑
+    @OneToMany(mappedBy = "campBaseInfo")
+    private List<Reservation> reservationList = new ArrayList<>();
+
+
 
 }
