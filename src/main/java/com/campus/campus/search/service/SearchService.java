@@ -2,6 +2,13 @@ package com.campus.campus.search.service;
 
 import com.campus.campus.dataapi.entity.CampBaseInfo;
 import com.campus.campus.dataapi.repository.SaveCampRepository;
+import com.campus.campus.search.dto.StoreListResponseDto;
+import com.campus.campus.search.entity.LocationType;
+import com.campus.campus.search.entity.Store;
+import com.campus.campus.search.entity.options.BasicOption;
+import com.campus.campus.search.entity.options.CampTypeOption;
+import com.campus.campus.search.entity.options.DetailOption;
+import com.campus.campus.search.entity.options.EnvironmentOption;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -33,13 +40,44 @@ public class SearchService {
         return campBaseInfo.get();
     }
 
-    public List<CampBaseInfo> findAll(){
-
-        System.out.println("service > findAll()");
+    public List<CampBaseInfo> findRawData(){
 
         List<CampBaseInfo> campBaseInfos=saveCampRepository.findAll();
 
         return campBaseInfos;
+    }
+
+    public StoreListResponseDto findAll(){
+
+        System.out.println("service > findAll()");
+
+        List<CampBaseInfo> campBaseInfos=findRawData();
+        List<Store> storeList=new ArrayList<>();
+
+        for (CampBaseInfo campInfo : campBaseInfos) {
+
+            //캠핑종류
+            CampTypeOption campTypeOption = CampTypeOption.of(campInfo.getCategory());
+            //지역옵션
+            String doName = campInfo.getDoNm().substring(0, 2);
+            //기본옵션
+            BasicOption basicOption = BasicOption.of(campInfo.getAmenities(), campInfo.getSwrmCnt(), campInfo.getToiletCnt(),
+                    campInfo.getAnimalYn(), campInfo.getEqpRental());
+            //상세옵션(+입지형태)
+            LocationType locationType = LocationType.of(campInfo.getGrass(), campInfo.getCrushStone(), campInfo.getTech(),
+                    campInfo.getPebble(), campInfo.getSoil());
+            DetailOption detailOption = DetailOption.of(campInfo.getAmenities(), campInfo.getSurrFacilities(),
+                    campInfo.getExprn(), campInfo.getCaravanAc(), campInfo.getTrailerAc(), locationType);
+            //환경옵션
+            EnvironmentOption environmentOption = EnvironmentOption.of(campInfo.getSurroundings());
+
+            Store store = Store.of(campTypeOption, doName, basicOption, detailOption, environmentOption);
+            storeList.add(store);
+        }
+
+        StoreListResponseDto responseDto = new StoreListResponseDto(storeList);
+
+        return responseDto;
     }
 
    /* public List<SearchStore> stubFindAll(){

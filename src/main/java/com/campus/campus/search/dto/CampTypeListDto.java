@@ -14,4 +14,7 @@ import java.util.Map;
 public class CampTypeListDto {
     Map<String, Integer> campType;
     Map<String, Integer> amenityType;
+    Map<String, Integer> surrFctType;
+    Map<String, Integer> surrType;
+    Map<String, Integer> doNameType;
 }
