@@ -50,11 +50,9 @@ public class Reservation {
     @CreatedDate
     @Column
     private LocalDateTime rsvDate;  // 예약 생성 시간 및 날짜
-
     // Review 매핑
     @OneToMany(mappedBy = "reservation")
     private List<Review> reviewList = new ArrayList<>();
-
 
     public enum RsvStatus {
         RSV_COMPLETE(1, "예약 완료"),
@@ -70,5 +68,4 @@ public class Reservation {
             this.status = status;
         }
     }
-    
 }

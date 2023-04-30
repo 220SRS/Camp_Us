@@ -23,8 +23,8 @@ public class ReservationResponseDto {
     public static ReservationResponseDto of(Reservation reservation) {
         ReservationResponseDto dto = new ReservationResponseDto();
         dto.setRsvId(reservation.getRsvId());
-        dto.setMemberId(reservation.getMemberId());
-        dto.setStoreId(reservation.getStoreId());
+        dto.setMemberId(reservation.getMember().getMemberId());
+        dto.setStoreId(reservation.getCampBaseInfo().getStoreId());
         dto.setMbCnt(reservation.getMbCnt());
         dto.setStartDate(reservation.getStartDate());
         dto.setEndDate(reservation.getEndDate());
