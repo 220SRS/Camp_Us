@@ -10,13 +10,18 @@ import com.campus.campus.reservation.dto.ReservationSaveDto;
 import com.campus.campus.reservation.dto.ReservationUpdateDto;
 import com.campus.campus.reservation.entity.Reservation;
 import com.campus.campus.reservation.repository.ReservationRepository;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Clock;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@EnableScheduling
 public class ReservationService {
     private ReservationRepository reservationRepository;
     private MemberRepository memberRepository;
@@ -73,12 +78,13 @@ public class ReservationService {
     }
 
     //예약 전체 조회
-    @Transactional(readOnly = true)
+    @Transactional
     public List<Reservation> findAllReservations() {
         return reservationRepository.findAll();
     }
 
     //예약 Id별 조회
+    @Transactional
     public Optional<ReservationResponseDto> findReservationById(Long rsvId) {
         return reservationRepository.findById(rsvId)
                 .map(ReservationResponseDto::of);
@@ -88,5 +94,35 @@ public class ReservationService {
     @Transactional
     public void deleteReservation(Long rsvId) {
         reservationRepository.deleteById(rsvId);
+    }
+
+    //예약 상태 자동 업데이트
+    @Scheduled(cron = "0 0 0 * * *")
+    @Transactional
+    public void updateReservationStatus() {
+        List<Reservation> reservations = findReservationsWithStatus(Reservation.RsvStatus.RSV_USING);
+
+        LocalDateTime currentTime = LocalDateTime.now(Clock.systemUTC());
+        for (Reservation reservation : reservations) {
+            if (isReservationExpired(reservation, currentTime)) {
+                setReservationStatusToComplete(reservation);
+            }
+        }
+    }
+
+    //RsvStatus에 따라 예약 목록을 반환
+    private List<Reservation> findReservationsWithStatus(Reservation.RsvStatus status) {
+        return reservationRepository.findAllByRsvStatus(status);
+    }
+
+    //예약 종료 날짜와 현재 시간을 비교
+    private boolean isReservationExpired(Reservation reservation, LocalDateTime currentTime) {
+        return reservation.getEndDate().isBefore(currentTime);
+    }
+
+    //예약 상태를 완료로 설정
+    private void setReservationStatusToComplete(Reservation reservation) {
+        reservation.setRsvStatus(Reservation.RsvStatus.RSV_COMPLETE);
+        reservationRepository.save(reservation);
     }
 }
