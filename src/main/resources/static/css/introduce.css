@@ -20,7 +20,7 @@ header a {
 section {
     width: 100%;
     height: 100vh;
-    background-image: url(../images/mockup-photos-5nUNdLueQio-unsplash.jpg);
+    background-image: url(../images/gantas-vaiciulenas-QchymJS9iJ0-unsplash.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -49,16 +49,18 @@ section {
 .itd-containter > .item p {
     margin-bottom: 0rem;
 }
-.itd-containter > .i1 {background-color: rgba(141,110,99,.8);}
-.itd-containter > .i2 { background-color: rgba(93,64,55,.8);}
+.itd-containter > .i1 {background-color: rgba(0,0,0,.5);}
+.itd-containter > .i2 { background-color: rgba(0,0,0,.5);}
 
 .item-title {
     text-align: left;
-    font-size: 18px;
     color: #fff;
     padding-top: 30px;
     padding-left: 25px;
 }
+
+.it-1{font-size: 17px; font-weight: 600; }
+.it-2{color: #29b6f6;}
 
 .item-content {
     display: inline-block;
