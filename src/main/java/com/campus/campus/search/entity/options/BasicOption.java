@@ -3,6 +3,8 @@ package com.campus.campus.search.entity.options;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Arrays;
+
 @Getter
 @Setter
 public class BasicOption {
@@ -20,25 +22,24 @@ public class BasicOption {
     boolean pet;
     // 반려동물 (애완동물 출입 animalYn-animalCmgCl)
 
-    public static BasicOption of(String amenities, Integer swrmCnt, Integer toiletCnt, String animalYn, String eqpRental){
+    public static BasicOption of(String amenities, Integer swrmCnt, Integer toiletCnt,
+                                 String animalYn, String eqpRental){
 
         BasicOption basicOption = new BasicOption();
-        String[] amenityList = amenities.split(",");
 
-        for (String amenity : amenityList) {
-            switch (amenity){
-
-                case "마트.편의점":
-                    basicOption.setMart(true);
-                    break;
-                case "무선인터넷":
-                    basicOption.setWifi(true);
-                    break;
-                default:
-                    //do nothing
-            }
-
-        }
+        Arrays.stream(amenities.split(","))
+                .forEach(amenity ->{
+                    switch (amenity){
+                        case "마트.편의점":
+                            basicOption.setMart(true);
+                            break;
+                        case "무선인터넷":
+                            basicOption.setWifi(true);
+                            break;
+                        default:
+                            //do nothing
+                    }
+                });
 
         if(swrmCnt>0) basicOption.setShowerRoom(true);
         if(toiletCnt>0) basicOption.setToilet(true);

@@ -34,7 +34,8 @@ public class DetailOption {
     LocationType locationType;
 
     public static DetailOption of(String amenities, String surrFacilities,
-                                  String exprn, String caravanAc, String trailerAc, LocationType locationType){
+                                  String exprn, String caravanAc, String trailerAc,
+                                  LocationType locationType){
 
         DetailOption detailOption=new DetailOption();
 

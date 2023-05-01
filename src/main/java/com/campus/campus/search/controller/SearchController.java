@@ -1,10 +1,7 @@
 package com.campus.campus.search.controller;
 
 import com.campus.campus.dataapi.entity.CampBaseInfo;
-import com.campus.campus.search.dto.AllStoresResponseDto;
-import com.campus.campus.search.dto.CampTypeListDto;
-import com.campus.campus.search.dto.SearchStoreResponseDto;
-import com.campus.campus.search.dto.StoreListResponseDto;
+import com.campus.campus.search.dto.*;
 import com.campus.campus.search.service.SearchService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -97,10 +94,10 @@ public class SearchController {
     @GetMapping("/{campId}")
     public ResponseEntity findById(@PathVariable long campId){
         System.out.println("controller > findById");
-        CampBaseInfo campBaseInfo = searchService.findById(campId);
-        SearchStoreResponseDto response = new SearchStoreResponseDto(campBaseInfo);
 
-        return new ResponseEntity(response, HttpStatus.OK);
+        StoreResponseDto response = searchService.findById(campId);
+
+        return ResponseEntity.ok(response);
 
     }
 

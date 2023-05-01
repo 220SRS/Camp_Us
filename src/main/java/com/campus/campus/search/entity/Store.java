@@ -1,10 +1,7 @@
 package com.campus.campus.search.entity;
 
 import com.campus.campus.search.dto.StoreListResponseDto;
-import com.campus.campus.search.entity.options.BasicOption;
-import com.campus.campus.search.entity.options.CampTypeOption;
-import com.campus.campus.search.entity.options.DetailOption;
-import com.campus.campus.search.entity.options.EnvironmentOption;
+import com.campus.campus.search.entity.options.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,10 +11,14 @@ import javax.persistence.*;
 @Getter
 public class Store {
 
+    private String name; // 사실 name으로 처리할려다가 캠핑장이름은 동일할 수도 있으니까..
+    private long id; // id값 혹시몰라서 받고
+    private String simpleAddr; // 간단한 주소 doNm+sigunguNm
+
     private CampTypeOption campTypeOption;
     // 일반야영장, 글램핑, 카라반, 자동차야영장
 
-    private String regionOption;
+    private RegionOption regionOption;
     // 서울, 인천, 경기, 부산, 울산, 대구, 광주, 대전, 제주, 기타
 
     private BasicOption basicOption;
@@ -32,13 +33,18 @@ public class Store {
     private EnvironmentOption environmentOption;
     // 산, 숲, 강, 해변, 계곡, 호수, 섬, 도심
 
-    public static Store of(CampTypeOption campTypeOption,
-                           String regionOption,
+    public static Store of(String name, long id, String simpleAddr,
+                           CampTypeOption campTypeOption,
+                           RegionOption regionOption,
                            BasicOption basicOption,
                            DetailOption detailOption,
                            EnvironmentOption environmentOption) {
 
         Store store = new Store();
+
+        store.setName(name);
+        store.setId(id);
+        store.setSimpleAddr(simpleAddr);
 
         store.setCampTypeOption(campTypeOption);
         store.setRegionOption(regionOption);
