@@ -2,11 +2,18 @@ package com.campus.campus.search.service;
 
 import com.campus.campus.dataapi.entity.CampBaseInfo;
 import com.campus.campus.dataapi.repository.SaveCampRepository;
+import com.campus.campus.search.dto.SearchDataResponse;
 import com.campus.campus.search.dto.StoreListResponseDto;
 import com.campus.campus.search.dto.StoreResponseDto;
 import com.campus.campus.search.entity.LocationType;
 import com.campus.campus.search.entity.Store;
+import com.campus.campus.search.entity.StorePage;
 import com.campus.campus.search.entity.options.*;
+import com.campus.campus.search.utils.ScrollPaginationCollection;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -52,16 +59,20 @@ public class SearchService {
 
         System.out.println("service > findAll()");
 
-        List<CampBaseInfo> campBaseInfos=findRawData();
+        StoreListResponseDto responseDto = new StoreListResponseDto(makeStoreList(findRawData()));
+
+        return responseDto;
+    }
+
+    public List<Store> makeStoreList(List<CampBaseInfo> campBaseInfos){
+        //List<CampBaseInfo> campBaseInfos=findRawData();
         List<Store> storeList=new ArrayList<>();
 
         for (CampBaseInfo campInfo : campBaseInfos) {
             storeList.add(makeStore(campInfo));
         }
 
-        StoreListResponseDto responseDto = new StoreListResponseDto(storeList);
-
-        return responseDto;
+        return storeList;
     }
 
     public Store makeStore(CampBaseInfo campInfo) {
@@ -87,6 +98,19 @@ public class SearchService {
                 campTypeOption, regionOption, basicOption, detailOption, environmentOption);
 
         return store;
+    }
+
+    public SearchDataResponse makeScrollPage(int size,Long lastStoreId){
+        Pageable pageable= PageRequest.of(0, size + 1);
+        Page<CampBaseInfo> campBaseInfoPage = saveCampRepository.findAllByStoreIdLessThanOrderByStoreIdDesc(lastStoreId,pageable);
+        List<CampBaseInfo> campBaseInfoList=campBaseInfoPage.getContent();
+        List<Store> storeList = makeStoreList(campBaseInfoList);
+        Page<Store> page=new PageImpl<>(storeList,campBaseInfoPage.getPageable(), campBaseInfoPage.getTotalElements()); //이식하기. content만 바꿔!
+
+        ScrollPaginationCollection<Store> feedsCursor = ScrollPaginationCollection.of(storeList, size);
+        SearchDataResponse response = SearchDataResponse.of(feedsCursor, page.getTotalElements());
+
+        return response;
     }
 
    /* public List<SearchStore> stubFindAll(){

@@ -2,7 +2,11 @@ package com.campus.campus.search.controller;
 
 import com.campus.campus.dataapi.entity.CampBaseInfo;
 import com.campus.campus.search.dto.*;
+import com.campus.campus.search.entity.Store;
 import com.campus.campus.search.service.SearchService;
+import com.campus.campus.search.utils.ScrollPaginationCollection;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -88,7 +92,16 @@ public class SearchController {
         //그런데 모든 데이터를 가져오는게 올바른 걸까..?
         //일부 데이터 먼저가저오고 스크롤이 내려갈때마다 더 데이터를 가져오는게 더 좋지 않을까..?
         //그 부분은 더 찾아봐야겠다.
+
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/scrollDataLoad")
+    public SearchDataResponse getScrollData(@RequestParam int size, @RequestParam Long lastFeedId){
+
+        SearchDataResponse response=searchService.makeScrollPage(size, lastFeedId);
+
+        return response;
     }
 
     @GetMapping("/{campId}")
